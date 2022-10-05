@@ -1,3 +1,1 @@
-var coolStr = "cool";
-
-console.log(coolStr);
+//**JS Operators Extended */
