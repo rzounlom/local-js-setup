@@ -1,6 +1,13 @@
-This is a small repo to help you run JS code more effiently locally
+This is a small repo to help you run JS code more effiently in your local environment
 
-Prerequisits: You should have Git and NodeJs installed on local machine
+Prerequisits: You should have Git and NodeJs installed on your local machine
+-Test installations
+--Git - run command: git --version
+--NodeJs - run command: node --version
+--both Git and NodeJS at the same time - run command: git --version && node --version (NOTE: the commands will be run in the order you call them)
 
-1. install dependencies: run the command "npm install"
-2. run nodemon: open a terminal in the root of the project and run the command "nodemon <file.js>"
+Running the applicaion/files
+
+1. install dependencies - run the command: npm install
+2. run nodemon - open a terminal in the root of the project and run the following command: nodemon <fileName.js>
+   NOTE: running nodemon without a file name specified will run the index.js file, as that is the entry point of the application
