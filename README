@@ -1,6 +1,10 @@
 This is a small repo to help you run JS code more effiently in your local environment
 
 Prerequisits: You should have Git and NodeJs installed on your local machine
+-Install pre-requisits: navigate to the Git/NodeJS download sites and follow the instructions for you OS
+--Git - https://git-scm.com/downloads
+--NodeJS - https://nodejs.org/en/download/
+
 -Test installations
 --Git - run command: git --version
 --NodeJs - run command: node --version
@@ -16,4 +20,6 @@ Running the applicaion/files
 
    Feel free to us this as your plaground and fork this repo in order to make changes, etc.
 
-   NOTE: I will be keeping this repo in the default state for lessons, so please do not make PR's to the repo. If you wish to make changes and push them to your gihub profile, then you can either fork the repo or change the origin. the command to change the remote url is: git remote set-url <newUrlForYourRepo>. You can find more detailed instructions here: https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
+   NOTE:
+   I will be keeping this repo in the default state for lessons, so please do not make PR's to the repo.
+   If you wish to make changes and push them to your own gihub profile, then you can either fork the repo or change the origin. The command to change the remote url is: git remote set-url <newUrlForYourRepo>. You can find more detailed instructions here: https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
