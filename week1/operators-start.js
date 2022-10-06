@@ -1,6 +1,5 @@
 //**JavaScript Operators Extended */
 
-///
 // ++ --> increase a value by 1
 var plusPlus = 5;
 plusPlus++;
