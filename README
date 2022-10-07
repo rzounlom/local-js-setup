@@ -13,7 +13,11 @@ Prerequisits: You should have Git and NodeJs installed on your local machine
 Running the applicaion/files
 
 1. install dependencies - run the command: npm install
-2. run nodemon - open a terminal in the root of the project and run the following command: nodemon <pathToFile>/<fileName.js>
+2. Install nodemon on your local machine:
+   -Mac run the command: sudo npm i -g nodemon
+   NOTE: enter the password for you Macbook when prompted
+   -Windows: you can run the command without sudo: npm i -g nodemon
+3. run nodemon - open a terminal in the root of the project and run the following command: nodemon <pathToFile>/<fileName.js>
    For example if your file is in the week1 folder, your command would be nodemon week1/<fileName.js>
 
    NOTE: running nodemon without a file name specified will run the index.js file, as that is the entry point of the application
