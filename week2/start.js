@@ -4,13 +4,13 @@
 
 //Example 1:
 // Write down what the following statements will return. Try to figure this out before putting the commands in the chrome console.
-2 == "2";
-2 === 2;
-10 % 3;
-10 % 3 === 1;
-true && false;
-false || true;
-true || false;
+// 2 == "2";
+// 2 === 2;
+// 10 % 3;
+// 10 % 3 === 1;
+// true && false;
+// false || true;
+// true || false;
 
 //Example 2:
 let isSunny = true,
@@ -32,7 +32,7 @@ isSunny = false;
 isRainy = false;
 
 //If we have two variables isSunny and isRainy, and this expression:
-console.log("boolean Answer:: ", (isSunny && isRainy) || !isSunny);
+// console.log("boolean Answer:: ", (isSunny && isRainy) || !isSunny);
 
 //if statements
 //Difference between value and !value
@@ -60,15 +60,15 @@ let secondvariable = "";
 let thirdvariable = 1;
 let secretMessage = "Shh!";
 
-if (firstvariable) {
-  console.log("first");
-} else if (firstvariable || secondvariable) {
-  console.log("second");
-} else if (firstvariable || thirdvariable) {
-  console.log("third");
-} else {
-  console.log("fourth");
-}
+// if (firstvariable) {
+//   console.log("first");
+// } else if (firstvariable || secondvariable) {
+//   console.log("second");
+// } else if (firstvariable || thirdvariable) {
+//   console.log("third");
+// } else {
+//   console.log("fourth");
+// }
 
 // What should the above code console.log? Why?
 // What is the value of firstvariable when it is initialized?
@@ -113,17 +113,17 @@ let num1 = 5;
 
 // Make sure to set the Break statement whenever your case doese not return anything
 let num4 = 100;
-switch (num4) {
-  case 0:
-  case 5:
-  case 6:
-    console.log("Number is low");
-    break;
-  case 100:
-    console.log("Number is high");
-  default:
-    console.log("I don't know the number");
-}
+// switch (num4) {
+//   case 0:
+//   case 5:
+//   case 6:
+//     console.log("Number is low");
+//     break;
+//   case 100:
+//     console.log("Number is high");
+//   default:
+//     console.log("I don't know the number");
+// }
 
 //** Loops */
 
@@ -132,7 +132,13 @@ switch (num4) {
 //   console.log(counter);
 // }
 
-//while loop
+//Exercise: use a for loop to print numbers from 1 to 10
+
+//Exercise: use a for loop to print numbers from 1 to 10 that are divisible by 2
+
+//Exercise: use a for loop to print numbers from 1 to 10 that are divisible by 3
+
+//while loop:
 // A while loop that prints 1, 2, and 3
 let counterTwo = 1;
 // while (counterTwo < 4) {
