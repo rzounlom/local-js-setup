@@ -128,19 +128,41 @@ let num4 = 100;
 //** Loops */
 
 //for loop: most common
-// for (let counter = 0; counter < 4; counter++) {
-//   console.log(counter);
-// }
+
+for (let counter = 0; counter < 4; counter++) {
+  // console.log(counter);
+}
 
 //Exercise: use a for loop to print numbers from 1 to 10
-
+for (let i = 1; i <= 10; i++) {
+  // console.log(i);
+}
 //Exercise: use a for loop to print numbers from 1 to 10 that are divisible by 2
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    // console.log(i);
+  }
+}
+true;
+false;
+//Exercise: FizzBuzz: if the number is divisible by 3 print Fizz, if the number is divisible by 5 print Buzz, if the number is divisible by 5 and 3,print FizzBuzz, else print the number
+for (let i = 1; i <= 30; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else {
+    console.log(i);
+  }
+}
 
 //Exercise: use a for loop to print numbers from 1 to 10 that are divisible by 3
 
 //while loop:
 // A while loop that prints 1, 2, and 3
-let counterTwo = 1;
+let counterTwo = 5;
 // while (counterTwo < 4) {
 //   console.log("while loop counterTwo", counterTwo);
 //   counterTwo++;
@@ -148,11 +170,9 @@ let counterTwo = 1;
 
 //do while loop: note the do while will always run at least once
 let countString = "";
-let i = 0;
+let i = 1;
 
-do {
-  countString = countString + i;
-  i++;
-} while (i < 5);
-
-// console.log(countString);
+// do {
+//   console.log(i);
+//   i++;
+// } while (i < 4);
