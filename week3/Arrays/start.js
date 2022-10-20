@@ -10,12 +10,14 @@ const arrayMethodsArr = [
   2,
   false,
   true,
+  { id: 1, name: "Sue", ocupation: "CEO", yrOfexp: 20 },
+  { id: 3, name: "Victor", ocupation: "Project Manager", yrOfexp: 3 },
   "blue",
   "black",
-  { id: 1, name: "John", ocupation: "Software Engineer", yrOfexp: 5 },
+  { id: 2, name: "John", ocupation: "Software Engineer", yrOfexp: 5 },
 ];
 
-console.log("default arrayMethodsArr: ", arrayMethodsArr);
+// console.log("default arrayMethodsArr: ", arrayMethodsArr);
 
 //Array.push(): adds one or more elements to the end of an array and returns the new length of the array.
 const newPushArrLength = arrayMethodsArr.push(100); //--> add the value 100 to end of the arryMethodsArr
@@ -76,21 +78,58 @@ const myConcatArr1 = [1, 2, 3];
 const myConcatArr2 = [4, 5, 6];
 
 const concatArrays = myConcatArr1.concat(myConcatArr2);
-
 // console.log("concatArrays: ", concatArrays);
+
+//Array.reverse(): reverses the order of an array, without modifying the array
+const forwardNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const reversedValues = forwardNumbers.reverse();
+// console.log("reversedValues: ", reversedValues);
 
 //**Common Array iterator helper methods that make our lives easier!*/
 
-//Array.forEach()
+//Array.forEach(): method executes a provided function once for each array element.
 
-//Array.map()
+arrayMethodsArr.forEach((element, idx) => {
+  // console.log(`The element ${element} is at index ${idx}`);
+});
 
-//Array.find()
+//Array.map(): method creates a new array populated with the results of calling a provided function on every element in the calling array.
 
-//Array.filter()
+const arrayMethodsArrMap = arrayMethodsArr.map(
+  (element, idx) => `The element ${element} is at index ${idx}`
+);
+// console.log("arrayMethodsArrMap: ", arrayMethodsArrMap);
 
-//Array.reduce()
+//Array.find(): method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
 
-//Array.every()
+const myArrFind = arrayMethodsArr.find((element) => element > 1);
+// console.log("arrayMethodsArr: ", arrayMethodsArr);
+// console.log("myArrFind: ", myArrFind);
 
-//Array.some()
+//Array.filter(): creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+const myArrObjFilter = arrayMethodsArr.filter(
+  (element) => typeof element === "object"
+);
+
+// console.log("arrayMethodsArr: ", arrayMethodsArr);
+// console.log("myArrObjFilter: ", myArrObjFilter);
+
+//Array.reduce(): iterates over an array and runs a function on each element in order to return on value
+const myNumbersArr = [25, 10, 20, 5, 15, 25];
+//find the sum of the array above using reduce
+const myReducedSum = myNumbersArr.reduce((sum, value) => sum + value);
+// console.log("myReducedSum: ", myReducedSum);
+
+//Array.every(): tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+// console.log("arrayMethodsArr: ", arrayMethodsArr);
+const allNumbers = arrayMethodsArr.every(
+  (element) => typeof element === "number"
+);
+// console.log("allNumbers: ", allNumbers);
+
+//Array.some(): tests whether at least one elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+// console.log("arrayMethodsArr: ", arrayMethodsArr);
+const someNumbers = arrayMethodsArr.some(
+  (element) => typeof element === "number"
+);
+// console.log("someNumbers: ", someNumbers);
