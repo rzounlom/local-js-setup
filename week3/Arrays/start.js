@@ -1,7 +1,7 @@
 //**Arrays: allow us to store values in an indexed list (starting at 0). We can store anything in an array(objects, lists, functions, numbers...) */
 
 //devine an array
-const myArrWrapper = new Array(); //using the new keyword to use an array class;
+const myArrWrapper = new Array(); //using the new keyword to create a new Array based off the Array class;
 const myArr = []; //array literal syntax
 
 //**Comon Array methods */
@@ -14,40 +14,42 @@ const arrayMethodsArr = [
   { id: 3, name: "Victor", ocupation: "Project Manager", yrOfexp: 3 },
   "blue",
   "black",
+  null,
+  undefined,
   { id: 2, name: "John", ocupation: "Software Engineer", yrOfexp: 5 },
 ];
 
-// console.log("default arrayMethodsArr: ", arrayMethodsArr);
+console.log("default arrayMethodsArr: ", arrayMethodsArr);
 
 //Array.push(): adds one or more elements to the end of an array and returns the new length of the array.
 const newPushArrLength = arrayMethodsArr.push(100); //--> add the value 100 to end of the arryMethodsArr
-// console.log("newPushArrLength: ", newPushArrLength);
-// console.log("Array.push(): ", arrayMethodsArr);
+console.log("newPushArrLength: ", newPushArrLength);
+console.log("Array.push(): ", arrayMethodsArr);
 
 //Array.pop(): removes the last element in an array, and returns the element, which can be stored in a variable
 const poppedVar = arrayMethodsArr.pop(); //--> remove the last element in arryMethodsArr
-// console.log("poppedVar: ", poppedVar);
-// console.log("Array.pop(): ", arrayMethodsArr);
+console.log("poppedVar: ", poppedVar);
+console.log("Array.pop(): ", arrayMethodsArr);
 
 //Array.shift(): method removes the first element from an array and returns that removed element.
 const shiftedVar = arrayMethodsArr.shift(); //--> remove the first element in arryMethodsArr
-// console.log("shiftedVar: ", shiftedVar);
-// console.log("Array.shift(): ", arrayMethodsArr);
+console.log("shiftedVar: ", shiftedVar);
+console.log("Array.shift(): ", arrayMethodsArr);
 
 //Array.unshift(): adds one or more elements to the beginning of an array and returns the new length of the array.
 const ushiftedArrayLength = arrayMethodsArr.unshift("cool beans", 8000, false); //--> remove the first element in arryMethodsArr
-// console.log("ushiftedArrayLength: ", ushiftedArrayLength);
-// console.log("Array.unshift(): ", arrayMethodsArr);
+console.log("ushiftedArrayLength: ", ushiftedArrayLength);
+console.log("Array.unshift(): ", arrayMethodsArr);
 
 //Array.indexOf(): returns the first index at which a given element can be found in the array, or -1 if it is not present.
 const myIndexOfVar = arrayMethodsArr.indexOf(true);
-// console.log("arrayMethodsArr: ", arrayMethodsArr);
-// console.log("myIndexOfVar: ", myIndexOfVar);
+console.log("arrayMethodsArr: ", arrayMethodsArr);
+console.log("myIndexOfVar: ", myIndexOfVar);
 
 //Array.includes(): determines whether an array includes a certain value among its entries, returning true or false as appropriate.
-const myIncludedVar = arrayMethodsArr.includes(true);
-// console.log("arrayMethodsArr: ", arrayMethodsArr);
-// console.log("myIncludedVar: ", myIncludedVar);
+const myIncludedVar = arrayMethodsArr.includes("cat");
+console.log("arrayMethodsArr: ", arrayMethodsArr);
+console.log("myIncludedVar: ", myIncludedVar);
 
 //Array.slice(): returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.
 // console.log("arrayMethodsArr: ", arrayMethodsArr);
@@ -89,22 +91,32 @@ const reversedValues = forwardNumbers.reverse();
 
 //Array.forEach(): method executes a provided function once for each array element.
 
-arrayMethodsArr.forEach((element, idx) => {
+arrayMethodsArr.forEach(function (element, idx) {
   // console.log(`The element ${element} is at index ${idx}`);
 });
 
 //Array.map(): method creates a new array populated with the results of calling a provided function on every element in the calling array.
 
-const arrayMethodsArrMap = arrayMethodsArr.map(
-  (element, idx) => `The element ${element} is at index ${idx}`
-);
-// console.log("arrayMethodsArrMap: ", arrayMethodsArrMap);
+const arrayMethodsArrMap = arrayMethodsArr.map(function (element, idx) {
+  // return `The element ${element} is at index ${idx}`;
+  return element;
+});
+
+console.log("arrayMethodsArrMap: ", arrayMethodsArrMap);
 
 //Array.find(): method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
 
-const myArrFind = arrayMethodsArr.find((element) => element > 1);
-// console.log("arrayMethodsArr: ", arrayMethodsArr);
-// console.log("myArrFind: ", myArrFind);
+const myArrFind = arrayMethodsArr.find(function (element) {
+  return element === "cool beans";
+});
+
+console.log("arrayMethodsArr: ", arrayMethodsArr);
+console.log("myArrFind: ", myArrFind);
+console.log("arrayMethodsArr: ", arrayMethodsArr);
+
+if (myArrFind) {
+  console.log("space found");
+}
 
 //Array.filter(): creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
 const myArrObjFilter = arrayMethodsArr.filter(
