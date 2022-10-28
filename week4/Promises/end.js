@@ -24,4 +24,4 @@ const myAsyncFunction = async () => {
   }
 };
 
-console.log(myAsyncFunction());
+// console.log(myAsyncFunction());
