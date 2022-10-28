@@ -8,3 +8,6 @@
 
 /*3. using an arrow function, create a function that takes in a name argument, 
 and a callback function which returns a greeting using the name from the parent function, and returns a*/
+
+//functions
+//arrays

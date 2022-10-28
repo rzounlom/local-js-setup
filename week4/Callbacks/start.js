@@ -19,5 +19,5 @@ function greeting(firstName = "John", lastName = "Doe", callback) {
   return console.log(callback(fullName));
 }
 
-greeting();
-greeting("Randy", "Watson", printGreeting);
+// greeting();
+// greeting("Randy", "Watson", printGreeting);
