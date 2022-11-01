@@ -16,6 +16,7 @@ class Employee {
 }
 
 class User extends Employee {
+  //User is created from the Employee type, inherits all Empoloyee properties.methods but can add its own
   constructor(
     firstName,
     lastName,
@@ -73,7 +74,7 @@ const sarah = new User("Sarah", "Johnson", "CEO", 15, "ADMIN");
 // console.log(fido instanceof Employee);
 
 //**Exercise** */ NOTE: This is meant to be hard/test you knowledge!
-//1. write a function that takes in an object as an argument and returns true if the object is instance of an Employee of false if not.
+//1. write a function that takes in an object as an argument and returns true if the object is instance of an Employee or false if not.
 
 //2. write a function called privilgedAccess which takes in an object and a secret(default = "my dirty little secret") as arguments and ruturns the sercret to ADMIN Users
 //2a: If the object is not an Employee or a User, return an error with the following message: "Please check the type of your object and try again"
