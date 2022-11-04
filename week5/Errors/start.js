@@ -78,7 +78,7 @@ function get() {
   } catch (e) {
     console.log("Inside catch");
     return 20;
-  } finally {
+  } finally { // finally runs regardless of the try catch results
     console.log("Inside finally");
     return 30;
   }
