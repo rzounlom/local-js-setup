@@ -1,0 +1,10 @@
+Week6 Agenda
+
+1. Walk through inspecting and walking through a website
+2. Debug using VSCode
+    1. Show how to debug a function using viscose and launch.json using last weeks functions
+3. Unit Tests
+    1. Create functions that do stuff
+    2. Test them using Jest
+4. TDD
+    1. Create functions that do stuff and test them using TDD method
