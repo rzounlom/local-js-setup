@@ -6,9 +6,6 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
- function testJest(str){
-return str
-}
 
 
 
@@ -40,4 +37,3 @@ return str
 //   palindrome("abcdefg") === false
 
 
-module.exports = { testJest }

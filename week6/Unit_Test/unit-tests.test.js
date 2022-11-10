@@ -1,3 +1,4 @@
+
 //example test function
 function testFunction(str){
   if(!str){
@@ -14,8 +15,8 @@ describe('testFunction', () => {
     expect(myStr).toEqual('John')
   })
 
-test('should return an error when no string is provided', () => {
-    //testing errors
-expect(() => testFunction()).toThrow(Error)
+  test('should return an error when no string is provided', () => {
+      //testing errors
+  expect(() => testFunction()).toThrow(Error)
   })
 })

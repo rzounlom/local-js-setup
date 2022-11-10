@@ -5,11 +5,6 @@
 //   reverse('apple') === 'leppa'
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
-
-function testJest(str){
-  return str
-  }
-  
   
   
   
