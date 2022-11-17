@@ -25,7 +25,6 @@ HEADER
 */
 
 header {
-  /* border: 1px solid white; */
   height: 10vh;
 }
 
@@ -37,7 +36,8 @@ header > nav {
   justify-content: center;
 }
 
-header > nav > .logo, header > nav > ul  {
+header > nav > .logo,
+header > nav > ul {
   letter-spacing: 2px;
 }
 
@@ -57,21 +57,20 @@ header > nav > ul {
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 400;
-  }
+}
 
-  header > nav > ul > li {
-    min-width: 85px;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-  }
+header > nav > ul > li {
+  min-width: 85px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+}
 
-  header > nav > ul > li.active {
-    background-color: aqua;
-  }
-
+header > nav > ul > li.active {
+  background-color: rgb(78, 204, 196);
+}
 
 /* 
 -------
@@ -79,7 +78,62 @@ PROFILE
 -------
 */
 
+.profile,
+.profile > .profile-main,
+.profile > .profile-main > .profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile {
   height: 90vh;
 }
 
+.profile > .profile-main {
+  height: 628px;
+  width: 1280px;
+  background-color: rgba(20, 19, 19, 0.847);
+}
+
+.profile > .profile-main > .profile-desc,
+.profile > .profile-main > .profile-img {
+  height: 90%;
+  padding: 0 5%;
+}
+
+.profile > .profile-main > .profile-desc {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile > .profile-main > .profile-img {
+  width: 35%;
+}
+
+.profile > .profile-main > .profile-img > .bg-container {
+  height: 90%;
+  width: 90%;
+  max-width: 325px;
+  max-height: 500px;
+  border: 10px solid rgba(255, 255, 255, 0.158);
+}
+
+.profile > .profile-main > .profile-img > .img-container {
+  position: absolute;
+  z-index: 50;
+  height: 90%;
+  width: 90%;
+  max-width: 325px;
+  max-height: 500px;
+  margin-bottom: 50px;
+  margin-left: 50px;
+}
+
+.profile > .profile-main > .profile-img > .img-container > img {
+  height: 100%;
+  width: 100%;
+}
