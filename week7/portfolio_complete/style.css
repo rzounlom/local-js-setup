@@ -91,9 +91,9 @@ PROFILE
 }
 
 .profile > .profile-main {
-  height: 628px;
+  height: 650px;
   width: 1280px;
-  background-color: rgba(20, 19, 19, 0.847);
+  background-color: rgba(24, 22, 22, 0.847);
 }
 
 .profile > .profile-main > .profile-desc,
