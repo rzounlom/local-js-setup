@@ -1,0 +1,2 @@
+1. answer questions about html css and javascript working together
+2. Create the landing page for our portfolio website
