@@ -1,2 +1,7 @@
+*** Week 7 Agenda ***
+
 1. answer questions about html css and javascript working together
-2. Create the landing page for our portfolio website
+2. Walk through how to analyze a website using the browser tools
+3. Walk through helpful VSCODE extensions
+4. Create the landing page for our portfolio website
+
