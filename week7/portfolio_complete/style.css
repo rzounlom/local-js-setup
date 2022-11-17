@@ -54,6 +54,7 @@ header > nav > ul {
   align-items: center;
   list-style: none;
   width: 50%;
+  /* font-size: 15px; */
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -153,7 +154,7 @@ PROFILE
 .profile > .profile-main > .profile-img > .bg-container {
   height: 100%;
   width: 100%;
-  max-width: 375px;
+  max-width: 400px;
   max-height: 550px;
   border: 10px solid rgba(255, 255, 255, 0.158);
 }
@@ -163,7 +164,7 @@ PROFILE
   z-index: 50;
   height: 100%;
   width: 100%;
-  max-width: 375px;
+  max-width: 400px;
   max-height: 550px;
   margin-bottom: 50px;
   margin-left: 50px;
