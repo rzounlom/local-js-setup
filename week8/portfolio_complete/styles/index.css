@@ -30,6 +30,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 2px;
+  height: 2px;
 }
 
 /* Track */
@@ -104,7 +105,7 @@ header > nav > ul {
 }
 
 header > nav > ul > li {
-  min-width: 130px;
+  min-width: 150px;
   min-height: 40px;
   height: 25px;
   transition: all 0.3s ease-in-out;
@@ -114,7 +115,12 @@ header > nav > ul > li:hover {
   background-color: var(--primary);
 }
 
-header > nav > ul > li.active {
+header > nav > ul > li > a {
+  height: 100%;
+  width: 100%;
+}
+
+header > nav > ul > li > a.active {
   background-color: var(--primary);
 }
 
@@ -204,6 +210,39 @@ section.profile > .section-main > .profile-img > .img-container > img {
 }
 
 /* PORTFOLIO */
+section.portfolio > .section-main {
+  overflow-y: auto;
+}
+
+section.portfolio > .section-main > .grid-container {
+  height: 100%;
+  width: 100%;
+  padding: 0 2%;
+}
+
+section.portfolio > .section-main > .grid-container > .row {
+  width: 100%;
+  height: auto;
+}
+
+section.portfolio > .section-main > .grid-container > .row > .col {
+  width: 30%;
+  height: 300px;
+  max-width: 400px;
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  margin-top: 20px;
+}
+
+section.portfolio > .section-main > .grid-container > .row > .col > .card {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: var(--background-light);
+  border-radius: 12px;
+}
 
 /* EXPERIENCE */
 

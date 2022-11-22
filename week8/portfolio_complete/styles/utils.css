@@ -93,7 +93,14 @@ Flex Box classes
   align-items: flex-end;
 }
 
-/*** Justify Wrap ***/
+/*** Flex Wrap ***/
+
+/* wrap */
 .f-w-w {
-  flex-wrap: w;
+  flex-wrap: wrap;
+}
+
+/* no-wrap */
+.f-w-n {
+  flex-wrap: nowrap;
 }
