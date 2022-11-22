@@ -31,21 +31,20 @@ body {
   margin: 0;
   height: 100vh;
   width: 99%;
+  border: 1px solid white;
 }
 
 /* 
-------
-HEADER
-------
+------------
+***HEADER***
+------------
 */
 
 .scroll-background {
   background-color: var(--background-medium);
 }
 
-.scroll-text {
-  background-color: white;
-}
+/* NAV */
 
 header > nav {
   position: fixed;
@@ -93,11 +92,7 @@ header > nav > ul > li.active {
   background-color: var(--primary);
 }
 
-/* 
--------
-PROFILE
--------
-*/
+/* Profile */
 
 header > .profile {
   margin-top: 10vh;
@@ -182,7 +177,13 @@ header > .profile > .profile-main > .profile-img > .img-container > img {
 }
 
 /* 
-----
-MAIN
-----
+------------
+***MAIN***
+------------
 */
+
+/* PORTFOLIO */
+
+/* EXPERIENCE */
+
+/* CONTACT */
