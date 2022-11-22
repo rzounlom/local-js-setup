@@ -6,6 +6,22 @@ Flex Box classes
 
 /* Display Flex */
 
+/* display flex, flex direction row, justify-content center, align-items center */
+.d-flex-r-c-c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* display flex, flex direction column, justify-content center, align-items center */
+.d-flex-c-c-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* display flex, flex direction row */
 .d-flex-r {
   display: flex;
