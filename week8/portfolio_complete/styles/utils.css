@@ -4,7 +4,7 @@ Flex Box classes
 ----------------
 */
 
-/* Display Flex */
+/*** Display Flex ***/
 
 /* display flex, flex direction row, justify-content center, align-items center */
 .d-flex-r-c-c {
@@ -34,7 +34,7 @@ Flex Box classes
   flex-direction: column;
 }
 
-/* Justify Content */
+/*** Justify Content ***/
 
 /* justify-content baseline */
 .jc-c {
@@ -91,4 +91,9 @@ Flex Box classes
 /* align-items flex-start*/
 .ai-fe {
   align-items: flex-end;
+}
+
+/*** Justify Wrap ***/
+.f-w-w {
+  flex-wrap: w;
 }
