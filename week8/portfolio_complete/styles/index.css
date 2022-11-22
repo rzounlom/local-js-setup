@@ -4,6 +4,9 @@
 :root {
   --primary: rgb(51, 179, 170);
   --primary-hover: rgba(51, 179, 170, 0.762);
+  --background-dark: #0e0e0e;
+  --background-medium: rgba(24, 22, 22, 0.847);
+  --background-light: rgba(255, 255, 255, 0.158);
 }
 
 * {
@@ -17,11 +20,17 @@ a {
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
   background-color: #0e0e0e;
   font-size: 14px;
   color: white;
+  overflow-y: auto;
+}
+
+.section {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 99%;
 }
 
 /* 
@@ -30,13 +39,20 @@ HEADER
 ------
 */
 
-header {
-  height: 10vh;
+.scroll-background {
+  background-color: var(--background-medium);
+}
+
+.scroll-text {
+  background-color: white;
 }
 
 header > nav {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  height: 10vh;
   width: 100%;
+  z-index: 100;
 }
 
 header > nav > .logo,
@@ -74,7 +90,7 @@ header > nav > ul > li:hover {
 }
 
 header > nav > ul > li.active {
-  background-color: rgb(51, 179, 170);
+  background-color: var(--primary);
 }
 
 /* 
@@ -83,44 +99,45 @@ PROFILE
 -------
 */
 
-.profile {
-  height: 90vh;
+header > .profile {
+  margin-top: 10vh;
+  height: 80vh;
 }
 
-.profile > .profile-main {
+header > .profile > .profile-main {
   height: 650px;
   width: 1280px;
-  background-color: rgba(24, 22, 22, 0.847);
+  background-color: var(--background-medium);
 }
 
-.profile > .profile-main > .profile-desc,
+header > .profile > .profile-main > .profile-desc,
 .profile > .profile-main > .profile-img {
   height: 90%;
   padding: 0 5%;
 }
 
-.profile > .profile-main > .profile-desc {
+header > .profile > .profile-main > .profile-desc {
   width: 60%;
   align-items: flex-start;
 }
 
-.profile > .profile-main > .profile-desc > .greeting {
+header > .profile > .profile-main > .profile-desc > .greeting {
   font-size: 5rem;
 }
 
-.profile > .profile-main > .profile-desc > .greeting > span {
-  color: rgb(51, 179, 170);
+header > .profile > .profile-main > .profile-desc > .greeting > span {
+  color: var(--primary);
 }
 
-.profile > .profile-main > .profile-desc > .info {
+header > .profile > .profile-main > .profile-desc > .info {
   font-size: 1.3rem;
   letter-spacing: 1.5px;
 }
 
-.profile > .profile-main > .profile-desc > button {
+header > .profile > .profile-main > .profile-desc > button {
   border: none;
   margin-top: 40px;
-  background-color: rgb(51, 179, 170);
+  background-color: var(--primary);
   height: 48px;
   width: 200px;
   border-radius: 100px;
@@ -131,24 +148,24 @@ PROFILE
   transition: all 0.3s ease-in-out;
 }
 
-.profile > .profile-main > .profile-desc > button:hover {
+header > .profile > .profile-main > .profile-desc > button:hover {
   cursor: pointer;
   background-color: var(--primary-hover);
 }
 
-.profile > .profile-main > .profile-img {
+header > .profile > .profile-main > .profile-img {
   width: 40%;
 }
 
-.profile > .profile-main > .profile-img > .bg-container {
+header > .profile > .profile-main > .profile-img > .bg-container {
   height: 100%;
   width: 100%;
   max-width: 400px;
   max-height: 550px;
-  border: 10px solid rgba(255, 255, 255, 0.158);
+  border: 10px solid var(--background-light);
 }
 
-.profile > .profile-main > .profile-img > .img-container {
+header > .profile > .profile-main > .profile-img > .img-container {
   position: absolute;
   z-index: 50;
   height: 100%;
@@ -159,7 +176,13 @@ PROFILE
   margin-left: 50px;
 }
 
-.profile > .profile-main > .profile-img > .img-container > img {
+header > .profile > .profile-main > .profile-img > .img-container > img {
   height: 100%;
   width: 100%;
 }
+
+/* 
+----
+MAIN
+----
+*/

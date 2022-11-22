@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header>
+    <header class="section">
       <nav class="d-flex-r-c-c">
         <div class="logo">
           <a href="index.html">J<span>D</span></a>
@@ -19,9 +19,13 @@
           <li class="active d-flex-r-c-c">
             <a href="index.html">Home</a>
           </li>
-          <li class="d-flex-r-c-c"><a href="index.html">About</a></li>
-          <li class="d-flex-r-c-c"><a href="index.html">Portfolio</a></li>
-          <li class="d-flex-r-c-c"><a href="index.html"> Contact</a></li>
+          <li class="d-flex-r-c-c">
+            <a href="index.html#portfolio">Portfolio</a>
+          </li>
+          <li class="d-flex-r-c-c">
+            <a href="index.html#experience">Experience</a>
+          </li>
+          <li class="d-flex-r-c-c"><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="profile d-flex-r-c-c">
@@ -45,5 +49,12 @@
         </div>
       </div>
     </header>
+    <main>
+      <div id="portfolio" class="portfolio section">Profile</div>
+      <div id="experience" class="experience section">Experience</div>
+      <div id="contact" class="contact section">Contact</div>
+    </main>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>
