@@ -1,0 +1,78 @@
+/* 
+----------------
+Flex Box classes
+----------------
+*/
+
+/* Display Flex */
+
+/* display flex, flex direction row */
+.d-flex-r {
+  display: flex;
+  flex-direction: row;
+}
+
+/* display flex, flex-direction column */
+.d-flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Justify Content */
+
+/* justify-content baseline */
+.jc-c {
+  justify-content: center;
+}
+
+/* justify-content center */
+.jc-bl {
+  justify-content: baseline;
+}
+
+/* justify-content flex-start */
+.jc-fs {
+  justify-content: flex-start;
+}
+
+/* justify-content flex-end */
+.jc-fe {
+  justify-content: flex-end;
+}
+
+/* justify-content space-between */
+.jc-sb {
+  justify-content: space-between;
+}
+
+/* justify-content space-evenly*/
+.jc-se {
+  justify-content: space-evenly;
+}
+
+/* justify-content space-around*/
+.jc-sa {
+  justify-content: space-around;
+}
+
+/* Align Items */
+
+/* align-items center*/
+
+.ai-bl {
+  align-items: baseline;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+/* align-items flex-start*/
+.ai-fs {
+  align-items: flex-start;
+}
+
+/* align-items flex-start*/
+.ai-fe {
+  align-items: flex-end;
+}
