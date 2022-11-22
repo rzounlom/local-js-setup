@@ -10,14 +10,14 @@
   </head>
   <body>
     <!-- HEADER -->
-    <header class="section">
+    <header>
       <nav class="d-flex-r-c-c">
         <div class="logo">
-          <a href="index.html">J<span>D</span></a>
+          <a href="index.html#home">J<span>D</span></a>
         </div>
         <ul class="nav-links d-flex-r jc-se ai-c">
           <li class="active d-flex-r-c-c">
-            <a href="index.html">Home</a>
+            <a href="index.html#home">Home</a>
           </li>
           <li class="d-flex-r-c-c">
             <a href="index.html#portfolio">Portfolio</a>
@@ -28,8 +28,11 @@
           <li class="d-flex-r-c-c"><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="profile d-flex-r-c-c">
-        <div class="profile-main d-flex-r-c-c">
+    </header>
+    <!-- MAIN -->
+    <main>
+      <section id="home" class="profile d-flex-r-c-c">
+        <div class="section-main d-flex-r-c-c">
           <div class="profile-desc d-flex-c jc-c ai-fs">
             <p class="greeting">Hi I'm <span>John</span> Doe</p>
             <p class="info">
@@ -38,7 +41,7 @@
               products! <br /><br />
               <strong>Let's build something great together!</strong>
             </p>
-            <button>Vew Details</button>
+            <button><a href="index.html#contact">Contact</a></button>
           </div>
           <div class="profile-img d-flex-r-c-c">
             <div class="bg-container"></div>
@@ -47,14 +50,16 @@
             </div>
           </div>
         </div>
-      </div>
-    </header>
-    <main>
-      <div id="portfolio" class="portfolio section d-flex-r">Profile</div>
-      <div id="experience" class="experience section d-flex-c-c-c">
-        Experience
-      </div>
-      <div id="contact" class="contact section d-flex-c-c-c">Contact</div>
+      </section>
+      <section id="portfolio" class="portfolio d-flex-c-c-c">
+        <div class="section-main">Portfolio</div>
+      </section>
+      <section id="experience" class="experience d-flex-c-c-c">
+        <div class="section-main">Experience</div>
+      </section>
+      <section id="contact" class="contact d-flex-c-c-c">
+        <div class="section-main">Contact</div>
+      </section>
     </main>
     <footer>Footer</footer>
     <script src="./js/index.js"></script>

@@ -12,6 +12,8 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -40,13 +42,20 @@ body {
   background: var(--primary);
 }
 
-.section {
+section {
   padding: 0;
   margin: 0;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
   border-top: 0.01px solid white;
   border-bottom: 0.01px solid white;
+}
+
+.section-main {
+  height: 650px;
+  width: 1280px;
+  background-color: var(--background-medium);
+  margin-top: 5%;
 }
 
 /* 
@@ -64,6 +73,8 @@ body {
 header > nav {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   height: 10vh;
   width: 100%;
   z-index: 100;
@@ -107,44 +118,45 @@ header > nav > ul > li.active {
   background-color: var(--primary);
 }
 
-/* Profile */
+/* 
+----------
+***MAIN***
+----------
+*/
 
-header > .profile {
-  margin-top: 10vh;
-  height: 80vh;
-}
+/* PROFILE */
 
-header > .profile > .profile-main {
+section.profile > .section-main {
   height: 650px;
   width: 1280px;
   background-color: var(--background-medium);
 }
 
-header > .profile > .profile-main > .profile-desc,
-.profile > .profile-main > .profile-img {
+section.profile > .section-main > .profile-desc,
+section.profile > .section-main > .profile-img {
   height: 90%;
   padding: 0 5%;
 }
 
-header > .profile > .profile-main > .profile-desc {
+section.profile > .section-main > .profile-desc {
   width: 60%;
   align-items: flex-start;
 }
 
-header > .profile > .profile-main > .profile-desc > .greeting {
+section.profile > .section-main > .profile-desc > .greeting {
   font-size: 5rem;
 }
 
-header > .profile > .profile-main > .profile-desc > .greeting > span {
+section.profile > .section-main > .profile-desc > .greeting > span {
   color: var(--primary);
 }
 
-header > .profile > .profile-main > .profile-desc > .info {
+section.profile > .section-main > .profile-desc > .info {
   font-size: 1.3rem;
   letter-spacing: 1.5px;
 }
 
-header > .profile > .profile-main > .profile-desc > button {
+section.profile > .section-main > .profile-desc > button {
   border: none;
   margin-top: 40px;
   background-color: var(--primary);
@@ -158,16 +170,16 @@ header > .profile > .profile-main > .profile-desc > button {
   transition: all 0.3s ease-in-out;
 }
 
-header > .profile > .profile-main > .profile-desc > button:hover {
+section.profile > .section-main > .profile-desc > button:hover {
   cursor: pointer;
   background-color: var(--primary-hover);
 }
 
-header > .profile > .profile-main > .profile-img {
+section.profile > .section-main > .profile-img {
   width: 40%;
 }
 
-header > .profile > .profile-main > .profile-img > .bg-container {
+section.profile > .section-main > .profile-img > .bg-container {
   height: 100%;
   width: 100%;
   max-width: 400px;
@@ -175,7 +187,7 @@ header > .profile > .profile-main > .profile-img > .bg-container {
   border: 10px solid var(--background-light);
 }
 
-header > .profile > .profile-main > .profile-img > .img-container {
+section.profile > .section-main > .profile-img > .img-container {
   position: absolute;
   z-index: 50;
   height: 100%;
@@ -186,16 +198,10 @@ header > .profile > .profile-main > .profile-img > .img-container {
   margin-left: 50px;
 }
 
-header > .profile > .profile-main > .profile-img > .img-container > img {
+section.profile > .section-main > .profile-img > .img-container > img {
   height: 100%;
   width: 100%;
 }
-
-/* 
-----------
-***MAIN***
-----------
-*/
 
 /* PORTFOLIO */
 
