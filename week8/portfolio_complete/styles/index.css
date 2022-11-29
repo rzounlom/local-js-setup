@@ -591,11 +591,11 @@ section.contact
   background-color: var(--background-light);
   border-color: var(--primary);
   color: var(--white);
-  padding: 1%;
+  padding: 1% 2%;
   border-radius: 30px;
   margin-top: 6px;
   min-height: 30%;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   border: 2px solid var(--primary);
 }
 
@@ -645,4 +645,32 @@ section.contact
 
 footer {
   height: 10vh;
+  background-color: var(--background-medium);
+  border-top: 1px solid var(--primary);
+}
+
+footer > .icons {
+  width: 30%;
+}
+
+footer > .icons > a > .icon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+footer > .icons > a > .icon:hover {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+footer > .icons > a > .icon > i {
+  transform: scale(2.5);
+  color: var(--white);
 }
