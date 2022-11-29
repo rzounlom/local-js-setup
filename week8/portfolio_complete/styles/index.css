@@ -254,6 +254,17 @@ section.portfolio > .section-main > .grid-container > .row > .col > .card {
   border-radius: 12px;
 }
 
+section.portfolio
+  > .section-main
+  > .grid-container
+  > .row
+  > .col
+  > .card
+  > img {
+  height: 100%;
+  width: 100%;
+}
+
 section.portfolio > .section-main > .grid-container > .row > .col > .overlay {
   position: absolute;
   bottom: 100%;
@@ -288,12 +299,12 @@ section.portfolio
   > a
   > button {
   border: none;
-  background-color: var(--background-light);
+  background-color: var(--white);
   height: 30px;
   width: 80px;
   border-radius: 12px;
-  font-weight: 700;
-  color: var(--white);
+  font-weight: 900;
+  color: var(--background-medium);
   letter-spacing: 2px;
   transition: all 0.3s ease-in-out;
 }
@@ -309,6 +320,7 @@ section.portfolio
   > button:hover {
   cursor: pointer;
   background-color: var(--background-medium);
+  color: var(--white);
 }
 
 section.portfolio
@@ -674,3 +686,9 @@ footer > .icons > a > .icon > i {
   transform: scale(2.5);
   color: var(--white);
 }
+
+/* 
+-------------------
+***MEDIA QUERIES***
+-------------------
+*/
