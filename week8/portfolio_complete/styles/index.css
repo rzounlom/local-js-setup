@@ -197,7 +197,7 @@ section.profile > .section-main > .profile-img {
 section.profile > .section-main > .profile-img > .bg-container {
   height: 100%;
   width: 100%;
-  max-width: 400px;
+  height: 600px;
   max-height: 550px;
   border: 10px solid var(--background-light);
 }
