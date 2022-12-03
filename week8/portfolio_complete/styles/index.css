@@ -56,11 +56,9 @@ section {
   margin: 0;
   min-height: 100vh;
   min-width: 100%;
-  /* border-top: 0.01px solid var(--white);
-  border-bottom: 0.01px solid var(--white); */
 }
 
-.section-main {
+section > .section-main {
   min-height: 700px;
   width: 1280px;
   border-radius: 12px;
@@ -139,11 +137,10 @@ header > nav > ul > li > a.active {
 */
 
 /* PROFILE SECTION*/
-
 section.profile > .section-main {
-  height: 650px;
-  width: 1280px;
-  background-color: var(--background-medium);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section.profile > .section-main > .profile-desc,
@@ -692,3 +689,92 @@ footer > .icons > a > .icon > i {
 ***MEDIA QUERIES***
 -------------------
 */
+
+/* Tablet */
+
+@media screen and (max-width: 912px) {
+  section {
+    padding: 0% 0;
+    min-height: 40vh;
+    width: 100%;
+  }
+
+  section > .section-main {
+    margin-top: 100px;
+    width: 90%;
+    height: 100%;
+  }
+
+  /* Profile */
+  section.profile > .section-main {
+    margin-top: 12vh;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  section.profile > .section-main > .profile-desc {
+    padding: 8%;
+    height: 65%;
+    width: 100%;
+  }
+
+  section.profile > .section-main > .profile-img {
+    height: 30%;
+    width: 100%;
+  }
+
+  section.profile > .section-main > .profile-desc {
+    order: 2;
+  }
+
+  section.profile > .section-main > .profile-img > .bg-container {
+    position: absolute;
+    margin-top: 6%;
+    height: 38%;
+    width: 40%;
+  }
+
+  section.profile > .section-main > .profile-img > .img-container {
+    position: relative;
+    margin: 0;
+    padding-top: 8%;
+    width: 40%;
+  }
+
+  /* Portfolio */
+
+  section.portfolio > .section-main > .grid-container > .row > .col {
+    width: 48%;
+  }
+
+  section.portfolio
+    > .section-main
+    > .grid-container
+    > .row
+    > .col
+    > .overlay
+    > .btn-group {
+    height: 60%;
+    width: 55%;
+  }
+
+  /* Experience */
+  section.experience > .section-main > .skills,
+  section.experience > .section-main > .timeline {
+    position: relative;
+    padding: 0 2%;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 40px;
+  }
+
+  footer > .icons {
+    width: 70%;
+  }
+}
+
+/* Mobile */
