@@ -695,7 +695,7 @@ footer > .icons > a > .icon > i {
 @media screen and (max-width: 912px) {
   section {
     padding: 0% 0;
-    min-height: 40vh;
+    min-height: 50vh;
     width: 100%;
   }
 
@@ -765,6 +765,11 @@ footer > .icons > a > .icon > i {
     padding: 0 2%;
     width: 100%;
     margin-top: 20px;
+  }
+
+  /* Contact */
+  section.contact {
+    min-height: 80vh;
   }
 
   /* Footer */
