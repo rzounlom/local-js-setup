@@ -228,6 +228,8 @@ section.portfolio > .section-main > .grid-container {
 section.portfolio > .section-main > .grid-container > .row {
   width: 100%;
   height: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 section.portfolio > .section-main > .grid-container > .row > .col {
@@ -825,6 +827,7 @@ footer > .icons > a > .icon > i {
     transform: scale(0.9);
   }
 }
+
 @media screen and (max-width: 600px) and (max-height: 750px) {
   section > .section-main {
     height: 80%;
@@ -848,5 +851,37 @@ footer > .icons > a > .icon > i {
     height: 48px;
     width: 200px;
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* Profile */
+  section.profile > .section-main > .profile-desc > .greeting {
+    font-size: 3rem;
+  }
+
+  section.profile > .section-main > .profile-img > .bg-container {
+    position: absolute;
+    margin-top: 6%;
+    height: 28%;
+    width: 45%;
+  }
+
+  section.profile > .section-main > .profile-img > .img-container {
+    position: relative;
+    margin: 0;
+    padding-top: 8%;
+    width: 45%;
+  }
+
+  /* Portfolio */
+
+  section.portfolio > .section-main > .grid-container > .row {
+    justify-content: center;
+  }
+
+  section.portfolio > .section-main > .grid-container > .row > .col {
+    width: 100%;
+    cursor: pointer;
   }
 }
