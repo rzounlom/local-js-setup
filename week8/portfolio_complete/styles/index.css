@@ -654,6 +654,8 @@ section.contact
 
 footer {
   height: 10vh;
+  width: 100%;
+  margin-top: 10vh;
   background-color: var(--background-medium);
   border-top: 1px solid var(--primary);
 }
@@ -671,8 +673,8 @@ footer > .icons > a > .icon {
 }
 
 footer > .icons > a > .icon:hover {
-  height: 60px;
-  width: 60px;
+  height: 62px;
+  width: 62px;
   border-radius: 50%;
   border: 3px solid var(--white);
   transform: scale(1.2);
@@ -769,14 +771,10 @@ footer > .icons > a > .icon > i {
 
   /* Contact */
   section.contact {
-    min-height: 80vh;
+    min-height: 75vh;
   }
 
   /* Footer */
-  footer {
-    margin-top: 40px;
-  }
-
   footer > .icons {
     width: 70%;
   }
