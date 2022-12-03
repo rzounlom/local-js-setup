@@ -797,6 +797,18 @@ footer > .icons > a > .icon > i {
 
 /* Mobile */
 @media screen and (max-width: 600px) {
+  /* Header */
+  header > nav > ul {
+    width: 75%;
+    margin-left: 100px;
+  }
+
+  header > nav > ul > li {
+    min-width: 70px;
+    min-height: 25px;
+    font-size: 0.5rem;
+  }
+
   /* Profile */
   section.profile > .section-main > .profile-desc {
     padding: 6%;
@@ -869,6 +881,19 @@ footer > .icons > a > .icon > i {
 }
 
 @media screen and (max-width: 500px) {
+  /* Header */
+  header > nav > ul {
+    width: 75%;
+    margin-left: 120px;
+    flex-wrap: wrap;
+  }
+
+  header > nav > ul > li {
+    min-width: 110px;
+    min-height: 25px;
+    font-size: 0.6rem;
+  }
+
   /* Profile */
   section.profile > .section-main > .profile-desc > .greeting {
     font-size: 3rem;
