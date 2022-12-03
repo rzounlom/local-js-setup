@@ -421,6 +421,12 @@ section.experience
 }
 
 /* TIMELINE: example url -->  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_timeline*/
+section.experience > .section-main > .timeline {
+  position: relative;
+  max-width: 1200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
 /* The actual timeline (the vertical ruler) */
 section.experience > .section-main > .timeline::after {
@@ -432,14 +438,6 @@ section.experience > .section-main > .timeline::after {
   bottom: 0;
   left: 50%;
   margin-left: -3px;
-}
-
-/* The actual timeline (the vertical ruler) */
-section.experience > .section-main > .timeline {
-  position: relative;
-  max-width: 1200px;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 /* Container around content */
@@ -524,6 +522,7 @@ section.experience > .section-main > .timeline > .timeline-card > .content > p {
 @media screen and (max-width: 600px) {
   /* Place the timelime to the left */
   section.experience > .section-main > .timeline::after {
+    top: 30px;
     left: 31px;
   }
 
@@ -702,7 +701,7 @@ footer > .icons > a > .icon > i {
   }
 
   section > .section-main {
-    margin-top: 100px;
+    margin-top: 120px;
     width: 90%;
     height: 100%;
   }
@@ -732,8 +731,8 @@ footer > .icons > a > .icon > i {
   section.profile > .section-main > .profile-img > .bg-container {
     position: absolute;
     margin-top: 6%;
-    height: 38%;
-    width: 40%;
+    height: 37.5%;
+    width: 38%;
   }
 
   section.profile > .section-main > .profile-img > .img-container {
@@ -770,7 +769,7 @@ footer > .icons > a > .icon > i {
   }
 
   /* Contact */
-  section.contact {
+  section {
     min-height: 75vh;
   }
 
@@ -781,3 +780,73 @@ footer > .icons > a > .icon > i {
 }
 
 /* Mobile */
+@media screen and (max-width: 600px) {
+  /* Profile */
+  section.profile > .section-main > .profile-desc {
+    padding: 6%;
+    height: 50%;
+  }
+
+  section.profile > .section-main > .profile-img {
+    height: 25%;
+  }
+
+  section.profile > .section-main > .profile-desc > .greeting {
+    font-size: 3rem;
+  }
+
+  /* Portfolio */
+  section.portfolio > .section-main > .grid-container > .row > .col {
+    width: 49%;
+    height: 250px;
+    max-width: 300px;
+    cursor: pointer;
+  }
+
+  section.portfolio
+    > .section-main
+    > .grid-container
+    > .row
+    > .col
+    > .overlay
+    > .btn-group {
+    width: 70%;
+  }
+
+  section.portfolio
+    > .section-main
+    > .grid-container
+    > .row
+    > .col
+    > .overlay
+    > .btn-group
+    > a
+    > button {
+    transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 600px) and (max-height: 750px) {
+  section > .section-main {
+    height: 80%;
+  }
+
+  section.profile > .section-main > .profile-img {
+    height: 30%;
+  }
+
+  section.profile > .section-main > .profile-desc {
+    padding-top: 0;
+    margin-top: -25px;
+    height: 35%;
+  }
+
+  section.profile > .section-main > .profile-desc > .greeting {
+    font-size: 3rem;
+  }
+
+  section.profile > .section-main > .profile-desc > button {
+    height: 48px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
