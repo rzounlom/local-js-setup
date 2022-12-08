@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.container {
+  height: 100vh;
+}
+
+header,
+footer,
+main,
+.sidebar {
+  border: 1px solid pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background-color: red;
+}
+
+.sidebar {
+  background-color: purple;
+}
+
+main {
+  background-color: blue;
+}
+
+footer {
+  background-color: green;
+}
