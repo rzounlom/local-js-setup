@@ -7,6 +7,9 @@
 
 .container {
   height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
 }
 
 header,
@@ -20,17 +23,37 @@ main,
 }
 
 header {
+  height: 10vh;
   background-color: red;
+  grid-column: span 4;
 }
 
 .sidebar {
+  display: none;
   background-color: purple;
 }
 
 main {
+  height: 80vh;
   background-color: blue;
+  grid-column: span 4;
 }
 
 footer {
+  height: 10vh;
   background-color: green;
+  grid-column: span 4;
+}
+
+@media (min-width: 600px) {
+  .sidebar {
+    display: inherit;
+    height: 80vh;
+    background-color: purple;
+    grid-column: span 1;
+  }
+
+  main {
+    grid-column: span 3;
+  }
 }

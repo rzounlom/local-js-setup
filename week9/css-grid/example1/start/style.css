@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+}
+
+header,
+footer,
+main {
+  border: 1px solid pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-image: url(./Screen\ Shot\ 2022-02-12\ at\ 7.09.28\ AM.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header {
+  background-color: red;
+  height: 10vh;
+}
+
+main {
+  background-color: blue;
+  height: 80vh;
+}
+
+footer {
+  background-color: green;
+  height: 10vh;
+}

@@ -1,10 +1,31 @@
 /*Codepen Link https://codepen.io/rzounlom/pen/ExRrdBv */
 /* scroll for starting CSS and hints; instructions in JS window -> */
 .wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: stretch;
 }
 
 .wrapper > * {
   margin-bottom: 1.5rem;
+}
+
+.c {
+  flex-basis: 100%;
+}
+
+.a,
+.h {
+  flex-basis: 66%;
+}
+
+.b,
+.d,
+.e,
+.f,
+.g {
+  flex-basis: 32%;
 }
 
 /* presentational CSS  -- ignore below this line */

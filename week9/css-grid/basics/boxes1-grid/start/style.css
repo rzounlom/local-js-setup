@@ -2,6 +2,18 @@
 /* scroll for starting CSS and hints; instructions in JS window -> */
 
 .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.a,
+.h {
+  grid-column: span 2;
+}
+
+.c {
+  grid-column: span 3;
 }
 
 /* HINT: Three types of Grid syntax might include:

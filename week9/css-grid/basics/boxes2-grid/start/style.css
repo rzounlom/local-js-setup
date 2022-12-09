@@ -1,7 +1,45 @@
 /* CODEPEN Link: https://codepen.io/rzounlom/pen/dyKaQNQ */
 /* scroll for starting CSS and hints; instructions in JS window -> */
 
-.wrapper {
+.a {
+  grid-area: a;
+}
+
+.c {
+  grid-area: c;
+}
+
+.h {
+  grid-area: h;
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    grid-template-areas:
+      "a a b"
+      "c c c"
+      "d e f"
+      "g h h";
+  }
+
+  .wrapper-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    grid-template-areas:
+      "a a b"
+      "c c c"
+      "d e f"
+      "g h h";
+  }
+
+  .wrapper-2 .a {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* HINT: Three types of Grid syntax might include:
