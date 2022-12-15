@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/*Declaring SCSS Variables*/
+$nav-bc: pink;
+$header-bc: red;
+$sidebar-bc: purple;
+$main-bc: blue;
+$footer-bc: green;
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "main   main   main   main"
+    "footer footer footer footer";
+
+  header,
+  footer,
+  main,
+  .sidebar {
+    border: 1px solid $nav-bc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    height: 10vh;
+    background-color: $header-bc;
+    grid-area: header;
+
+    nav {
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      ul {
+        list-style: none;
+        display: flex;
+
+        li {
+          font-size: 1.3rem;
+          margin-left: 8px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    height: 80vh;
+    background-color: $sidebar-bc;
+    display: none;
+    grid-area: sidebar;
+  }
+
+  main {
+    height: 80vh;
+    background-color: $main-bc;
+    grid-area: main;
+  }
+
+  footer {
+    background-color: $footer-bc;
+    height: 10vh;
+    grid-area: footer;
+  }
+
+  @media (min-width: 600px) {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+      "header header header header"
+      "sidebar   main   main   main"
+      "footer footer footer footer";
+
+    .sidebar {
+      display: inherit;
+    }
+  }
+}
