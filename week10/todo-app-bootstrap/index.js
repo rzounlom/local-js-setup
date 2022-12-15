@@ -1,23 +1,23 @@
 //store id in variable
 let id = 0;
 
-//get id of button
+//get id of button and add click event callback function
 document.getElementById("add").addEventListener("click", () => {
-  //get current date/time
+  //get current date(today)
   let createdDate = new Date();
   //get reference to table to add data
   let table = document.getElementById("list");
   // console.log("TABLE", table);
-  //get reference to the row to add new data
+  //get reference to the row to add new data: since the th is 0, we want to add new rows starting at 1
   let row = table.insertRow(1);
-  //add id to the new row and set it to the current id variable above
+  //add an id to the new row and set it to the current id variable above
   row.setAttribute("id", `item-${id}`);
   //get reference to task and date inputs
   let taskInput = document.getElementById("new-task");
   let startDateInput = document.getElementById("new-start-date");
   let endDateInput = document.getElementById("new-end-date");
   // console.log({ taskInput, startDateInput, endDateInput });
-  //alert if not all inputs have values
+  //alert and return out of the function if not all inputs have values are filled out
   const inputsValidated =
     taskInput.value && startDateInput.value && endDateInput.value;
   if (!inputsValidated) {
@@ -41,7 +41,7 @@ document.getElementById("add").addEventListener("click", () => {
   //add buttons(actions) to Actions cell
   let actions = row.insertCell(4);
   actions.appendChild(createDeleteButton(id++));
-  //reset the task and date inputs to text
+  //reset the task and date input values to blak text
   taskInput.value = "";
   startDateInput.value = "";
   endDateInput.value = "";
