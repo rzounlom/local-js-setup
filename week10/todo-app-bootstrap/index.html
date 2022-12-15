@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Todo</title>
+  </head>
+  <body class="container">
+    <div class="jumbotron text-center text-primary">
+      <i class="fa-regular fa-clipboard fa-4x"></i>
+      <h1>My Todos</h1>
+    </div>
+    <br />
+    <!-- Card for dates and todo input -->
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm">
+            <div class="form-group">
+              <label for="new-start-date">Start Date</label>
+              <input type="date" id="new-start-date" class="form-control" />
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="form-group">
+              <label for="new-start-date">Start End</label>
+              <input type="date" id="new-end-date" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <div class="form-group">
+              <label for="new-task">Task</label>
+              <input
+                type="text"
+                class="form-control"
+                id="new-task"
+                placeholder="task"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <button id="add" class="btn btn-primary" form-control>Create</button>
+        </div>
+      </div>
+    </div>
+    <!-- Table for displaying todos -->
+    <table id="list" class="table table-dark table-striped">
+      <tr>
+        <th>Task</th>
+        <th>Date Created</th>
+        <th>Start Date</th>
+        <th>Due Date</th>
+        <th>Actions</th>
+      </tr>
+    </table>
+
+    <script src="index.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
