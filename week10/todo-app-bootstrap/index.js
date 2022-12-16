@@ -16,7 +16,7 @@ document.getElementById("add").addEventListener("click", () => {
   let taskInput = document.getElementById("new-task");
   let startDateInput = document.getElementById("new-start-date");
   let endDateInput = document.getElementById("new-end-date");
-  // console.log({ taskInput, startDateInput, endDateInput });
+
   //alert and return out of the function if not all inputs have values are filled out
   const inputsValidated =
     taskInput.value && startDateInput.value && endDateInput.value;
@@ -28,6 +28,7 @@ document.getElementById("add").addEventListener("click", () => {
     `);
     return;
   }
+
   //set task equal to the text entered into the task input
   row.insertCell(0).innerHTML = taskInput.value;
   //set Date Created cell to createdDate variable above with date formatting: YYYY/MM/DD
@@ -37,8 +38,9 @@ document.getElementById("add").addEventListener("click", () => {
   //set Start Date cell to Start Date date picker
   row.insertCell(2).innerHTML = startDateInput.value;
   //set End Date cell to End Date date picker
-  row.insertCell(2).innerHTML = endDateInput.value;
+  row.insertCell(3).innerHTML = endDateInput.value;
   //add buttons(actions) to Actions cell
+  console.log(row);
   let actions = row.insertCell(4);
   actions.appendChild(createDeleteButton(id++));
   //reset the task and date input values to blak text
