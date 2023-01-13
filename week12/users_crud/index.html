@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>My Users</title>
+  </head>
+  <body class="container">
+    <div id="new-user" class="jumbotron">
+      <h2>Add New User</h2>
+      <div class="row">
+        <div class="col-sm">
+          <input
+            type="text"
+            id="new-user-name"
+            class="form-control"
+            placeholder="Name"
+            required
+          />
+        </div>
+        <div class="col-sm">
+          <input
+            type="text"
+            id="new-user-title"
+            class="form-control"
+            placeholder="Title"
+            required
+          />
+        </div>
+      </div>
+
+      <br />
+      <button id="add-new-user" class="btn btn-primary form-control">
+        Add New User
+      </button>
+    </div>
+
+    <div id="users" class="row"></div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
