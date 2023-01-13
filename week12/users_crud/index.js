@@ -131,7 +131,8 @@ class DOMManager {
 //create new user
 $("#add-new-user").click(() => {
   DOMManager.createUser($("#new-user-name").val(), $("#new-user-title").val());
-  $("#add-new-user").val("");
+  $("#new-user-name").val("");
+  $("#new-user-title").val("");
 });
 
 //update user
@@ -145,7 +146,6 @@ function updateUser(id) {
   // });
 
   DOMManager.updateUser(id, name, title);
-  $(`#${id}-update-user`).val("");
 }
 
 //get all users on first render
