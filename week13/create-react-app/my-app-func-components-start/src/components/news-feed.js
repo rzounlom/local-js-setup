@@ -1,14 +1,16 @@
-import { Component } from "react";
-import Post from "./post";
+import { Post } from "./post";
+import { useState } from "react";
 
-export default class NewsFeed extends Component {
-  render() {
-    return (
-      <div className="container">
-        <Post />
-        <Post />
-        <Post />
-      </div>
-    );
-  }
-}
+const NewsFeed = () => {
+  const [myTitle, setMyTitle] = useState("My Cool Post");
+
+  return (
+    <div>
+      <Post title={myTitle} setMyTitle={setMyTitle} />
+      <Post title={myTitle} setMyTitle={setMyTitle} />
+      <Post title={myTitle} setMyTitle={setMyTitle} />
+    </div>
+  );
+};
+
+export default NewsFeed;

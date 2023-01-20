@@ -5,6 +5,7 @@ import ReplyButton from "./reply-button";
 
 export default class Post extends Component {
   render() {
+    const myVar = "test";
     return (
       <div className="card w-75">
         <div className="card-header bg-success text-white">
@@ -17,7 +18,7 @@ export default class Post extends Component {
             <span> </span>
             <ReplyButton />
             <Comment />
-            <Comment />
+            <Comment myVar={myVar} />
           </div>
         </div>
       </div>
