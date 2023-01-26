@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+
+import UserCardList from "./components/user-card-list/UserCardList";
+import UserForm from "./components/user-form/UserForm";
+import { useState } from "react";
+import { users } from "./data/users";
 
 function App() {
+  const [userList, setUserList] = useState(users);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    age: "",
+    occupation: "",
+    avatar: "",
+  });
+
+  const handleFormData = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setUserList([...userList, { id: userList.length + 1, ...formData }]);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      age: "",
+      occupation: "",
+      avatar: "",
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header>
+        <UserForm
+          formHandler={handleFormData}
+          formData={formData}
+          setUserList={setUserList}
+          handleSubmit={handleSubmit}
+        />
       </header>
+      <main>
+        <UserCardList users={userList} />
+      </main>
     </div>
   );
 }
