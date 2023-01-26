@@ -11,7 +11,7 @@ export default function UserForm({ formHandler, formData, handleSubmit }) {
             type="text"
             name="firstName"
             placeholder="First Name"
-            value={formData.firstname}
+            value={formData.firstName}
             onChange={formHandler}
           />
           <input
