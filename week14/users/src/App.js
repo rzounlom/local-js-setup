@@ -22,6 +22,12 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    for (let key in formData) {
+      if (key !== "avatar" && formData[key] === "") {
+        alert("Please fill in all data");
+        return;
+      }
+    }
     setUserList([...userList, { id: userList.length + 1, ...formData }]);
     setFormData({
       firstName: "",
