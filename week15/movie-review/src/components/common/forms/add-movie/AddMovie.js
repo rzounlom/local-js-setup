@@ -2,27 +2,32 @@ import "./AddMovie.scss";
 
 import { useState } from "react";
 
-export default function AddMovie() {
+export default function AddMovie({ addMovie }) {
   const [movieData, setMovieData] = useState({
     title: "",
     imgUrl: "",
     summary: "",
   });
 
+  const { title, imgUrl, summary } = movieData;
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
     setMovieData({ ...movieData, [name]: value });
-    console.log("MOVIE DATA: ", movieData);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("MOVIE DATA: ", movieData);
+    addMovie({ title, imgUrl, summary });
+    setMovieData({
+      title: "",
+      imgUrl: "",
+      summary: "",
+    });
   };
 
-  const { title, imgUrl, summary } = movieData;
   return (
     <form id="add-movie-form" onSubmit={handleSubmit}>
       <div className="heading">
