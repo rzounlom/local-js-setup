@@ -1,7 +1,16 @@
 import "./Header.scss";
 
-import { Button, Jumbotron } from "react-bootstrap";
+import AddMovie from "../common/forms/add-movie/AddMovie";
 
 export default function Header() {
-  return <header>Header</header>;
+  return (
+    <header>
+      <div className="heading">
+        <h3>Movie Reviews</h3>
+      </div>
+      <div className="add-movie-container">
+        <AddMovie />
+      </div>
+    </header>
+  );
 }
