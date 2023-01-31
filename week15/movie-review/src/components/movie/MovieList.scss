@@ -1,0 +1,11 @@
+.movie-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .no-movies {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+}

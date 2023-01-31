@@ -1,6 +1,6 @@
 import "./Header.scss";
 
-import AddMovie from "../common/forms/add-movie/AddMovie";
+import AddMovie from "../common/forms/AddMovie";
 
 export default function Header({ addMovie }) {
   return (

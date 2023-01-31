@@ -1,5 +1,11 @@
 import "./Main.scss";
 
-export default function Main() {
-  return <main>Main</main>;
+import MovieList from "../movie/MovieList";
+
+export default function Main({ movies }) {
+  return (
+    <main>
+      <MovieList movies={movies} />
+    </main>
+  );
 }

@@ -10,6 +10,7 @@ export const movies = [
     reviews: [
       {
         id: 1,
+        name: "James Jones",
         review: "Best movie ever!",
         rating: 5.0,
       },
@@ -27,11 +28,13 @@ export const movies = [
     reviews: [
       {
         id: 1,
+        name: "Sarah Smith",
         review: "Best movie ever!",
         rating: 5,
       },
       {
         id: 2,
+        name: "Jake Williams",
         review: "Average at best",
         rating: 3,
       },
@@ -49,11 +52,13 @@ export const movies = [
     reviews: [
       {
         id: 1,
+        name: "LeBron James",
         review: "Best movie ever!",
         rating: 5,
       },
       {
         id: 2,
+        name: "Jessica Wilson",
         review: "Scary as hell!",
         rating: 4,
       },
@@ -67,20 +72,23 @@ export const movies = [
 
     summary:
       "Queen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T'Challa's death. As the Wakandans strive to embrace their next chapter, the heroes must band together with Nakia and Everett Ross to forge a new path for their beloved kingdom.",
-    rating: 4.0,
+    rating: 5.0,
     reviews: [
       {
         id: 1,
+        name: "Lauren Anderson",
         review: "Best movie ever!",
         rating: 5,
       },
       {
         id: 2,
+        name: "James Jones",
         review: "Love th ending!",
         rating: 4.5,
       },
       {
         id: 3,
+        name: "Ricky Recardo",
         review: "The story was very compelling",
         rating: 5,
       },

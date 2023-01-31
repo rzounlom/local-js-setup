@@ -1,5 +1,10 @@
 main {
-  height: 65vh;
+  min-height: 65vh;
   width: 100%;
-  border: 1px solid black;
+  padding: 10px 0px;
+  height: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
