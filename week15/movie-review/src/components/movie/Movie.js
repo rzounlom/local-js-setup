@@ -1,27 +1,8 @@
 import "./Movie.scss";
 
 import { Accordion } from "react-bootstrap";
-import Review from "../review/Review";
 import ReviewList from "../review/ReviewList";
 import Stars from "../common/stars/Stars";
-
-const myMovie = {
-  id: 1,
-  title: "Shotgun Wedding",
-  imgUrl:
-    "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcST4eAYLJlEMgcyTdsbteeHsyYWfZqjAgGH8UzOmmtYP3-QtwEG",
-  summary:
-    "Darcy and Tom gather their families for a destination wedding, but the ceremony gets put on hold when gunmen take everyone hostage. Now, they must do everything they can to save their loved ones -- if they don't wind up killing each other first.",
-  rating: 4.5,
-  reviews: [
-    {
-      id: 1,
-      name: "James Jones",
-      review: "Best movie ever!",
-      rating: 5.0,
-    },
-  ],
-};
 
 export default function Movie({ movie }) {
   //helper function to get the average of all movie review ratings
@@ -42,7 +23,6 @@ export default function Movie({ movie }) {
     return 0;
   };
 
-  console.log("AVERAGE REVIEW: ", avgReview());
   return (
     <div className="movie">
       <div className="img">
