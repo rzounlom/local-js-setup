@@ -8,7 +8,7 @@ export default function Review({ review }) {
     <ListGroup className="review">
       <ListGroup.Item>
         <div className="rating">
-          {`${review.name}`} <Stars rating={review.rating} />
+          <h6>{`${review.name}`}</h6> <Stars rating={review.rating} />
         </div>
         <div className="review-text">- {review.review}</div>
       </ListGroup.Item>

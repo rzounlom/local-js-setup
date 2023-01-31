@@ -1,10 +1,12 @@
 .review {
   margin-top: 10px;
+
   .rating {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-bottom: 1px solid lightgray;
   }
 
   .review-text {

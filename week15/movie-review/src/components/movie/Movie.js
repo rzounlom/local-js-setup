@@ -34,7 +34,7 @@ export default function Movie({ movie }) {
       </div>
       <div className="movie-description">
         <div className="rating">
-          <span>{movie.title}</span> <Stars rating={avgReview()} edit={false} />
+          {movie.title} <Stars rating={avgReview()} edit={false} />
         </div>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
