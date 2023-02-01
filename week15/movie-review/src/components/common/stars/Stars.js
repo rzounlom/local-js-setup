@@ -1,5 +1,5 @@
-import React from "react";
 import ReactStars from "react-rating-stars-component";
+import { useEffect } from "react";
 
 export default function Stars({ edit = false, rating = 0, setRating }) {
   let starsConfigNoEdit = {
@@ -18,6 +18,10 @@ export default function Stars({ edit = false, rating = 0, setRating }) {
       setRating(newValue);
     },
   };
+
+  useEffect(() => {
+    return;
+  }, [rating]);
 
   if (edit) {
     return <ReactStars {...starsConfiEdit} />;
