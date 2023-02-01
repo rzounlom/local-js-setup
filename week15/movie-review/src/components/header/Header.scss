@@ -1,19 +1,40 @@
 header {
-  height: 35vh;
+  height: 10vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .heading {
-    height: 20%;
-  }
-
   .add-movie-container {
     height: 100%;
-    width: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid lightgrey;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    button {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      border: 1px solid lightgray;
+      background-color: rgba(0, 255, 255, 0.499);
+      font-weight: 700;
+      color: rgba(12, 12, 12, 0.868);
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        background-color: aqua;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 import "./App.scss";
 
-import { Container } from "react-bootstrap";
+import { Container, Modal } from "react-bootstrap";
+
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
 import { movies } from "./data/movies";
@@ -20,7 +21,16 @@ function App() {
       reviews: [],
     };
 
-    setCurrentMovies([...currentMovies, newMovie]);
+    setCurrentMovies([newMovie, ...currentMovies]);
+  };
+
+  const handleEditMovie = (movieToEdit) => {
+    //filter out old movie
+    const filteredMovies = currentMovies.filter(
+      (movie) => movie.id !== movieToEdit.id
+    );
+
+    setCurrentMovies({ ...filteredMovies, movieToEdit });
   };
 
   return (
