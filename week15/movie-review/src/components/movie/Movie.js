@@ -1,15 +1,25 @@
 import "./Movie.scss";
 
 import { Accordion } from "react-bootstrap";
+import DeleteModal from "../common/modals/DeleteMovie";
 import EditMovie from "../common/modals/EditMovie";
 import ReviewList from "../review/ReviewList";
 import Stars from "../common/stars/Stars";
 import { useState } from "react";
 
-export default function Movie({ movie, editMovie }) {
-  const [show, setShow] = useState(false);
-  const handleShowModal = () => setShow(true);
-  const handleCloseModal = () => setShow(false);
+export default function Movie({ movie, editMovie, deleteMovie }) {
+  const [showEditModal, setShowEditModal] = useState(false);
+  const handleShowEditModal = () => setShowEditModal(true);
+  const handleCloseEditModal = () => setShowEditModal(false);
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const handleShowDeleteModal = () => setShowDeleteModal(true);
+  const handleCloseDeleteModal = () => setShowDeleteModal(false);
+
+  const handleDeleteMovie = () => {
+    deleteMovie(movie.id);
+    handleCloseDeleteModal();
+  };
 
   //helper function to get the average of all movie review ratings
   const avgReview = () => {
@@ -35,17 +45,25 @@ export default function Movie({ movie, editMovie }) {
     <div className="movie">
       <EditMovie
         movie={movie ? movie : defaultMovie}
-        show={show}
-        handleCloseModal={handleCloseModal}
+        show={showEditModal}
+        handleCloseModal={handleCloseEditModal}
         editMovie={editMovie}
+      />
+
+      <DeleteModal
+        show={showDeleteModal}
+        handleCloseModal={handleCloseDeleteModal}
+        handleDeleteMovie={handleDeleteMovie}
       />
       <div className="img">
         <img src={`${movie.imgUrl}`} alt={movie.title} />
         <div className="movie-actions">
-          <button className="edit" onClick={handleShowModal}>
+          <button className="edit" onClick={handleShowEditModal}>
             Edit
           </button>{" "}
-          <button className="delete">Delete</button>
+          <button className="delete" onClick={handleShowDeleteModal}>
+            Delete
+          </button>
         </div>
       </div>
       <div className="movie-description">

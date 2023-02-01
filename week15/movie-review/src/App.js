@@ -52,7 +52,11 @@ function App() {
   return (
     <Container className="App">
       <Header addMovie={handleAddMovie} />
-      <Main movies={currentMovies} editMovie={handleEditMovie} />
+      <Main
+        movies={currentMovies}
+        editMovie={handleEditMovie}
+        deleteMovie={handleDeleteMovie}
+      />
     </Container>
   );
 }
