@@ -15,7 +15,7 @@ export default function Header({ addMovie }) {
         handleCloseModal={handleCloseModal}
         addMovie={addMovie}
       />
-      <h1>My Movie Reviews</h1>
+      <h1>Movie Reviews</h1>
 
       <div className="add-movie-container">
         <button onClick={handleShowModal}>Add New Movie</button>

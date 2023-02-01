@@ -8,6 +8,11 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  @media (min-width: 1080px) {
+    max-width: 500px;
+    max-height: 1000px;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }

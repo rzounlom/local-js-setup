@@ -1,5 +1,6 @@
 import "./MovieList.scss";
 
+import { Col } from "react-bootstrap";
 import Movie from "./Movie";
 
 function NoMovies() {
@@ -16,13 +17,22 @@ export default function MovieList({
     <div className="movie-list">
       {movies.length > 0 ? (
         movies.map((movie) => (
-          <Movie
-            movie={movie}
-            key={movie.id}
-            editMovie={editMovie}
-            deleteMovie={deleteMovie}
-            addReview={addReview}
-          />
+          <Col
+            lg={6}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Movie
+              movie={movie}
+              key={movie.id}
+              editMovie={editMovie}
+              deleteMovie={deleteMovie}
+              addReview={addReview}
+            />
+          </Col>
         ))
       ) : (
         <NoMovies />

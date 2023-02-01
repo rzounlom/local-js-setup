@@ -1,8 +1,10 @@
 main {
-  min-height: 65vh;
+  min-height: 80vh;
   width: 100%;
   padding: 10px 0px;
   height: auto;
+  display: flex;
+  justify-content: center;
 
   &::-webkit-scrollbar {
     display: none;
