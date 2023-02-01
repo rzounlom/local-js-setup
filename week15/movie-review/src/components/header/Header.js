@@ -7,6 +7,7 @@ export default function Header({ addMovie }) {
   const [show, setShow] = useState(false);
   const handleShowModal = () => setShow(true);
   const handleCloseModal = () => setShow(false);
+
   return (
     <header>
       <AddMovie

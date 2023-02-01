@@ -1,10 +1,16 @@
 import "./Movie.scss";
 
 import { Accordion } from "react-bootstrap";
+import EditMovie from "../common/modals/EditMovie";
 import ReviewList from "../review/ReviewList";
 import Stars from "../common/stars/Stars";
+import { useState } from "react";
 
-export default function Movie({ movie }) {
+export default function Movie({ movie, editMovie }) {
+  const [show, setShow] = useState(false);
+  const handleShowModal = () => setShow(true);
+  const handleCloseModal = () => setShow(false);
+
   //helper function to get the average of all movie review ratings
   const avgReview = () => {
     //check to make sure movie hast reviews
@@ -23,12 +29,22 @@ export default function Movie({ movie }) {
     return 0;
   };
 
+  const defaultMovie = { title: "", imgUrl: "", summary: "" };
+
   return (
     <div className="movie">
+      <EditMovie
+        movie={movie ? movie : defaultMovie}
+        show={show}
+        handleCloseModal={handleCloseModal}
+        editMovie={editMovie}
+      />
       <div className="img">
         <img src={`${movie.imgUrl}`} alt={movie.title} />
         <div className="movie-actions">
-          <button className="edit">Edit</button>{" "}
+          <button className="edit" onClick={handleShowModal}>
+            Edit
+          </button>{" "}
           <button className="delete">Delete</button>
         </div>
       </div>
