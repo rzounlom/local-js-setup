@@ -1,13 +1,14 @@
 import "./Movie.scss";
 
-import { Accordion } from "react-bootstrap";
+import { Accordion, Button, Form } from "react-bootstrap";
+
 import DeleteModal from "../common/modals/DeleteMovie";
 import EditMovie from "../common/modals/EditMovie";
 import ReviewList from "../review/ReviewList";
 import Stars from "../common/stars/Stars";
 import { useState } from "react";
 
-export default function Movie({ movie, editMovie, deleteMovie }) {
+export default function Movie({ movie, editMovie, deleteMovie, addReview }) {
   const [showEditModal, setShowEditModal] = useState(false);
   const handleShowEditModal = () => setShowEditModal(true);
   const handleCloseEditModal = () => setShowEditModal(false);
@@ -16,9 +17,32 @@ export default function Movie({ movie, editMovie, deleteMovie }) {
   const handleShowDeleteModal = () => setShowDeleteModal(true);
   const handleCloseDeleteModal = () => setShowDeleteModal(false);
 
+  const [reviewData, setReviewData] = useState({
+    name: "",
+    review: "",
+  });
+
+  const [rating, setRating] = useState(0);
+  const { name, review } = reviewData;
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setReviewData({ ...reviewData, [name]: value });
+  };
+
   const handleDeleteMovie = () => {
     deleteMovie(movie.id);
     handleCloseDeleteModal();
+  };
+
+  const handleSubmitReview = (event) => {
+    event.preventDefault();
+    const newReview = { ...reviewData, rating };
+    addReview(movie.id, newReview);
+    setReviewData({
+      name: "",
+      review: "",
+    });
+    setRating(0);
   };
 
   //helper function to get the average of all movie review ratings
@@ -87,7 +111,41 @@ export default function Movie({ movie, editMovie, deleteMovie }) {
           </Accordion.Item>
           <Accordion.Item eventKey="2">
             <Accordion.Header>Add Your Review</Accordion.Header>
-            <Accordion.Body>Add Review Form</Accordion.Body>
+            <Accordion.Body>
+              {" "}
+              <Form onSubmit={handleSubmitReview}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Your name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    placeholder="John Doe"
+                    value={name}
+                    required
+                    onChange={handleInputChange}
+                  />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Your review</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="review"
+                    placeholder="The best movie I've ever seen..."
+                    value={review}
+                    required
+                    onChange={handleInputChange}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Label>Your rating</Form.Label>
+                  <Stars edit={true} rating={rating} setRating={setRating} />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </Accordion.Body>
           </Accordion.Item>
         </Accordion>
       </div>

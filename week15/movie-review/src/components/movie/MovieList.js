@@ -6,7 +6,12 @@ function NoMovies() {
   return <div className="no-movies">No current movies</div>;
 }
 
-export default function MovieList({ movies, editMovie, deleteMovie }) {
+export default function MovieList({
+  movies,
+  editMovie,
+  deleteMovie,
+  addReview,
+}) {
   return (
     <div className="movie-list">
       {movies.length > 0 ? (
@@ -16,6 +21,7 @@ export default function MovieList({ movies, editMovie, deleteMovie }) {
             key={movie.id}
             editMovie={editMovie}
             deleteMovie={deleteMovie}
+            addReview={addReview}
           />
         ))
       ) : (

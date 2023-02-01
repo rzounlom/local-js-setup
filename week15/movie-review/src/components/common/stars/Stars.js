@@ -1,7 +1,7 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 
-export default function Stars({ edit = false, rating, setRating }) {
+export default function Stars({ edit = false, rating = 0, setRating }) {
   let starsConfigNoEdit = {
     edit,
     size: 30,
@@ -15,7 +15,7 @@ export default function Stars({ edit = false, rating, setRating }) {
     isHalf: true,
     value: rating,
     onChange: (newValue) => {
-      console.log(`Example 4: new value is ${newValue}`);
+      setRating(newValue);
     },
   };
 

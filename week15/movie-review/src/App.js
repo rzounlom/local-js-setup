@@ -39,7 +39,19 @@ function App() {
     setCurrentMovies(movies);
   };
 
-  const handleAddReview = () => {};
+  const handleAddReview = (movieId, review) => {
+    //find the index of the movie we want to add the review to
+    const idx = currentMovies.findIndex((movie) => movie.id === movieId);
+
+    //create copy of current movies: don't want to mutate state directly
+    const movies = currentMovies.map((movie) => movie);
+
+    //add the new review to the movie
+    movies[idx].reviews.push(review);
+
+    //update currentMovies
+    setCurrentMovies(movies);
+  };
 
   const handleDeleteMovie = (movieId) => {
     const filteredMovies = currentMovies.filter(
@@ -56,6 +68,7 @@ function App() {
         movies={currentMovies}
         editMovie={handleEditMovie}
         deleteMovie={handleDeleteMovie}
+        addReview={handleAddReview}
       />
     </Container>
   );
