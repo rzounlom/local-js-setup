@@ -1,10 +1,23 @@
 import "./PostCard.scss";
 
-import { Card, Image } from "react-bootstrap";
+import { Button, Card, Image } from "react-bootstrap";
 
-export default function PostCard({ post }) {
+import EditPost from "../modals/EditPost";
+import { useState } from "react";
+
+export default function PostCard({ post, getPosts }) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleOpen = () => setShow(true);
   return (
     <div className="post-card">
+      <EditPost
+        show={show}
+        getPosts={getPosts}
+        handleClose={handleClose}
+        currentPost={post}
+      />
       <Card>
         <Card.Img variant="top" src={post.imgUrl} />
         <Card.Body>
@@ -24,6 +37,12 @@ export default function PostCard({ post }) {
               <div className="post-date">
                 <span>Date Posted:</span> Mon Jan 25, 2023
               </div>
+            </div>
+            <div className="post-actions">
+              <Button variant="primary" onClick={handleOpen}>
+                Edit
+              </Button>
+              <Button variant="danger">Delete</Button>
             </div>
           </div>
 

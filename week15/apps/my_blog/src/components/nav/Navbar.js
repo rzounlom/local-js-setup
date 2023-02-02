@@ -4,7 +4,7 @@ import CreatePostModal from "../modals/CreatePost";
 import { IoCreateOutline } from "react-icons/io5";
 import { useState } from "react";
 
-export default function MyNav() {
+export default function MyNav({ getPosts }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,7 +12,11 @@ export default function MyNav() {
 
   return (
     <>
-      <CreatePostModal show={show} handleClose={handleClose} />
+      <CreatePostModal
+        show={show}
+        handleClose={handleClose}
+        getPosts={getPosts}
+      />
       <Navbar collapseOnSelect expand="xxl" bg="light" variant="light">
         <Container fluid>
           <Navbar.Brand href="/" style={{ color: "aqua" }}>

@@ -24,5 +24,14 @@
         font-weight: 700;
       }
     }
+
+    .post-actions {
+      margin-left: 30px;
+      width: 25%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 }

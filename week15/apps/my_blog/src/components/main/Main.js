@@ -1,8 +1,12 @@
 import "./Main.scss";
 
+import { useEffect, useState } from "react";
+
 import { Container } from "react-bootstrap";
 import PostList from "../post-list/PostList";
-import { posts } from "../../data/posts";
+import axios from "axios";
+
+// import { posts } from "../../data/posts";
 
 const NoPosts = () => (
   <div className="no-posts">
@@ -10,12 +14,15 @@ const NoPosts = () => (
   </div>
 );
 
-export default function Main() {
+export default function Main({ posts, getPosts }) {
   return (
     <main>
       <Container>
-        {/* <PostList posts={posts} /> */}
-        {posts.length > 0 ? <PostList posts={posts} /> : <NoPosts />}
+        {posts.length > 0 ? (
+          <PostList posts={posts} getPosts={getPosts} />
+        ) : (
+          <NoPosts />
+        )}
       </Container>
     </main>
   );
