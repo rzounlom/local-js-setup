@@ -1,6 +1,6 @@
 import "./Header.scss";
 
-import MyNav from "./Navbar";
+import MyNav from "../nav/Navbar";
 
 export default function Header() {
   return (
