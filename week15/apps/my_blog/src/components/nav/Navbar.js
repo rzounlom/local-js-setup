@@ -13,9 +13,9 @@ export default function MyNav() {
   return (
     <>
       <CreatePostModal show={show} handleClose={handleClose} />
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-        <Container>
-          <Navbar.Brand href="/">
+      <Navbar collapseOnSelect expand="xxl" bg="light" variant="light">
+        <Container fluid>
+          <Navbar.Brand href="/" style={{ color: "aqua" }}>
             <h1>My Blog</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,7 +31,8 @@ export default function MyNav() {
                   justfyContent: "space-between",
                   fontSize: "1.2rem",
                   fontWeight: "700",
-                  border: "1px solid lightgray",
+                  border: "3px solid aqua",
+                  color: "aqua",
                   borderRadius: "12px",
                 }}
                 onClick={handleOpen}

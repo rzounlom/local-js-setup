@@ -1,5 +1,12 @@
 main {
-  height: 85vh;
+  min-height: 85vh;
+  height: auto;
   width: 100%;
-  background-color: pink;
+  // border: 1px solid black;
+  overflow-y: auto;
+  display: flex;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

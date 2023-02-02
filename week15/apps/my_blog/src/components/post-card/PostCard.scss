@@ -1,0 +1,28 @@
+.post-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  min-height: 500px;
+
+  .post-text {
+    height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+  }
+
+  .post-description {
+    display: flex;
+    height: 80px;
+
+    .post-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 10px;
+      font-size: 0.7rem;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}

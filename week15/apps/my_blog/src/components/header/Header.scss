@@ -1,5 +1,16 @@
 header {
-  height: auto;
+  height: 15vh;
   width: 100%;
-  background-color: orange;
+
+  @media (min-width: 768px) {
+    height: 12vh;
+  }
+
+  @media (min-width: 1080px) {
+    height: 13vh;
+  }
+
+  @media (min-width: 1281px) {
+    height: 10vh;
+  }
 }
