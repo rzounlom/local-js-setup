@@ -1,0 +1,19 @@
+.category {
+  height: 92vh;
+  width: 100%;
+  // background-color: pink;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  ul {
+    list-style: none;
+    height: 5%;
+    width: 80%;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
