@@ -30,7 +30,7 @@ export default function Category() {
         </li>
       </ul>
 
-      <Route path={`${url}/:name`}>
+      <Route path={`${path}/:name`}>
         <Item />
       </Route>
     </div>
