@@ -1,0 +1,26 @@
+nav {
+  height: 8vh;
+  width: 100vw;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  ul {
+    height: 100%;
+    width: 80%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    li {
+      font-size: 1.5rem;
+      font-weight: 700;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
