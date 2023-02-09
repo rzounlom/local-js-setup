@@ -21,13 +21,15 @@ export default function Products() {
         <h1>Products</h1>
         <ul>{linkList}</ul>
       </div>
+      <div className="products-main">
+        <Route path={`${url}/:productId`}>
+          <Product data={products} />
+        </Route>
 
-      <Route path={`${url}/:productId`}>
-        <Product data={products} />
-      </Route>
-      <Route exact path={url}>
-        <p>Please select a product.</p>
-      </Route>
+        <Route exact path={url}>
+          <p>Please select a product.</p>
+        </Route>
+      </div>
     </div>
   );
 }

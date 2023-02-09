@@ -1,5 +1,28 @@
 .product {
-  height: 10%;
-  width: 50%;
+  height: 60%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  // background-color: green;
+
+  .product-img {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 50%;
+      height: 70%;
+    }
+  }
+
+  .product-desc {
+    height: 20%;
+    width: 100%;
+  }
 }

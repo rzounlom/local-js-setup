@@ -11,16 +11,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 20%;
+    justify-content: center;
+    height: 15%;
 
     ul {
       list-style: none;
-      height: 20%;
-      width: 85%;
+      height: 50%;
+      margin-top: 5px;
+      padding: 5px;
+      width: 90%;
       border: 1px solid lightgray;
       display: flex;
       justify-content: space-around;
       align-items: center;
     }
+  }
+
+  .products-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85%;
+    width: 100%;
+    // background-color: blue;
   }
 }
