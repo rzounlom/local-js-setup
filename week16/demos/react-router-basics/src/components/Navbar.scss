@@ -1,0 +1,21 @@
+nav {
+  height: 10vh;
+  width: 100%;
+  border: 1px solid lightgray;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5%;
+    width: 80%;
+
+    li {
+      list-style: none;
+      font-size: 1.5rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
