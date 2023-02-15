@@ -49,7 +49,7 @@ export default function Counter() {
   // console.log("VALUE: ", value);
   // console.log("incrementByValue: ", incrementByValue);
 
-  const options = createOptions(10);
+  const options = createOptions(100);
   // console.table(options);
   // console.table(incrementOptions);
 
@@ -78,6 +78,7 @@ export default function Counter() {
         >
           Subtract
         </Button>
+        <label>Increment/Decrement by amount</label>
         <Select
           defaultValue={incrementByValue}
           style={{
