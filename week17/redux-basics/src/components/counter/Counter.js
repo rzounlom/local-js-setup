@@ -10,6 +10,8 @@ import {
 } from "../../features/counter/counterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
+import { toast } from "react-toastify";
+
 export default function Counter() {
   const dispatch = useDispatch();
 
@@ -17,6 +19,31 @@ export default function Counter() {
   const handleChange = (value) => {
     // console.log(`selected ${value}`);
     dispatch(incrementByAmount(value));
+  };
+
+  const handleDecrement = () => {
+    // console.log(
+    //   value,
+    //   incrementByValue,
+    //   "value chech",
+    //   value - incrementByValue < 0
+    // );
+    if (value - incrementByValue < 0) {
+      return toast.warn(
+        "Counter cannot go below 0! Please select another decrement amount",
+        {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
+    }
+    dispatch(decrement());
   };
 
   // console.log("VALUE: ", value);
@@ -47,7 +74,7 @@ export default function Counter() {
           ghost
           block
           disabled={value === 0}
-          onClick={() => dispatch(decrement())}
+          onClick={handleDecrement}
         >
           Subtract
         </Button>

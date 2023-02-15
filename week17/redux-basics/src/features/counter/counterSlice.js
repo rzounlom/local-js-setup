@@ -23,12 +23,6 @@ export const counterSlice = createSlice({
       }
     },
     decrement: (state) => {
-      //check if decrementing the current value by the payload will result in a number being less than 0
-      //this is an edgecase but still need to account for it
-      if (state.value - state.incrementByValue < 0) {
-        return;
-      }
-
       //decrement value by incrementByValue if it's larger than 1
       if (state.incrementByValue > 1) {
         state.value -= state.incrementByValue;
