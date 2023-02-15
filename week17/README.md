@@ -1,6 +1,7 @@
 Week 17 Lesson Plan
 
 **redux basics app**
+-Redux overview: (https://redux.js.org/tutorials/fundamentals/part-1-overview)
 -Intro to Redux Toolkit(https://redux-toolkit.js.org/introduction/getting-started)
 -Redux dev tools chrome extension(https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
 -Styled with sass and Ant Design(https://ant.design/docs/react/introduce)
@@ -20,7 +21,7 @@ react-toastify: Alerts (https://www.npmjs.com/package/react-toastify) - npm i re
 redux-toolkit: Global state management (https://redux-toolkit.js.org/introduction/getting-started) - @reduxjs/toolkit
 react-redux: React library for binding redux to react - npm i react-redux
 
-command to install all dependices at once: npm i sass antd @ant-design/icons react-router-dom@5.3.3 react-toastify @reduxjs/toolkit react-redux
+command to install dependices all at once: npm i sass antd @ant-design/icons react-router-dom@5.3.3 react-toastify @reduxjs/toolkit react-redux
 
 -Redux setup: start with the auth slice
 -Create intial components for Home Page, Login Page, and Dashboard with minial styling
