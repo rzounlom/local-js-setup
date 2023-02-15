@@ -1,7 +1,7 @@
 import "./Counter.scss";
 
 import { Button, Select } from "antd";
-import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
+import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import { createOptions, incrementOptions } from "../../data/options";
 import {
   decrement,
@@ -59,7 +59,7 @@ export default function Counter() {
       <div className="counter-actions">
         <Button
           type="default"
-          icon={<PlusOutlined />}
+          icon={<PlusCircleOutlined />}
           size="large"
           ghost
           block
