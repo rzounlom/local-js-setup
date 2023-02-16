@@ -25,9 +25,18 @@
     align-items: center;
     border: 1px solid lightgrey;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
     border-radius: 12px;
-    width: 50%;
+    width: 80%;
     height: 40%;
+
+    @media (min-width: 768px) {
+      width: 70%;
+      height: 40%;
+    }
+
+    @media (min-width: 1080px) {
+      width: 50%;
+      height: 40%;
+    }
   }
 }

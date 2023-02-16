@@ -1,9 +1,10 @@
 import "./Login.scss";
 
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -12,6 +13,14 @@ const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 const Login = () => {
+  const [loginData, setLoginData] = useState({ username: "", password: "" });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData({ ...loginData, [name]: value });
+    console.log("USER LOGIN DATA: ", loginData);
+  };
+
   return (
     <div className="login">
       <div className="login-heading">
