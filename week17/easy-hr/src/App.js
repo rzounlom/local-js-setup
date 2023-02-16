@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/login" render={() => <Login />} />
         <Route
           path="/dashboard"
-          render={() => (isLoggedIn ? <Dashboard /> : <Redirect to="/" />)}
+          render={() => (isLoggedIn ? <Dashboard /> : <Redirect to="/login" />)}
         />
       </Switch>
     </Router>

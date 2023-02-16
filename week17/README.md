@@ -13,6 +13,7 @@ Week 17 Lesson Plan
 -Revert to react 17(https://dev.to/lowla/create-react-app-with-a-previous-version-of-react-4g03)
 
 -Install dependencies:
+Free graphics/images: (https://www.freepik.com)
 SASS: styling (https://sass-lang.com/) - npm i sass
 Ant Design: react component library (https://ant.design/docs/react/introduce) - npm i antd
 Ant Design Icons: Icons for Ant D (https://ant.design/components/icon) - npm i @ant-design/icons
