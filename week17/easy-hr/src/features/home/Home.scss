@@ -18,13 +18,14 @@
       ul {
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         list-style: none;
 
         li {
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           font-weight: 500;
           color: rgb(100, 99, 99);
+          margin-left: 10%;
           transition: all 0.3s ease-in-out;
 
           &:hover {
@@ -34,7 +35,13 @@
       }
 
       @media (min-width: 768px) {
-        width: 40%;
+        width: 50%;
+
+        ul {
+          li {
+            font-size: 1.3rem;
+          }
+        }
       }
     }
   }
