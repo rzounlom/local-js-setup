@@ -5,12 +5,30 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { adminOptions, userOptions } from "../../data/menuOptions";
 
+import AddUsers from "./AddUsers";
+import Profile from "./Profile";
+import Users from "./Users";
 import { useSelector } from "react-redux";
 
 const { Header, Sider, Content } = Layout;
 const App = () => {
   const { profile } = useSelector((state) => state.auth.currentUser);
   const [collapsed, setCollapsed] = useState(false);
+  const [content, setContent] = useState("1");
+
+  const renderContent = (key) => {
+    switch (key) {
+      case "1":
+        return <Profile />;
+      case "2":
+        return <Users />;
+      case "3":
+        return <AddUsers />;
+      default:
+        return null;
+    }
+  };
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -23,6 +41,10 @@ const App = () => {
           mode="inline"
           defaultSelectedKeys={["1"]}
           items={profile.status === "ADMIN" ? adminOptions : userOptions}
+          onClick={({ key, keyPath, domEvent }) => {
+            console.log({ key, keyPath, domEvent });
+            setContent(key);
+          }}
         />
       </Sider>
       <Layout className="site-layout">
@@ -49,7 +71,7 @@ const App = () => {
             overflowY: "auto",
           }}
         >
-          Profile
+          {renderContent(content)}
         </Content>
       </Layout>
     </Layout>
