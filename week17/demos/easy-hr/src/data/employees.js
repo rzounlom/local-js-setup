@@ -1,0 +1,38 @@
+export const employees = [
+  {
+    id: 1,
+    firstName: "Jane",
+    lastName: "Doe",
+    status: "ADMIN",
+    title: "HR Manager",
+    userName: "jdoe@gmail.com",
+    password: "I am cool",
+  },
+  {
+    id: 2,
+    firstName: "Josua",
+    lastName: "Williams",
+    status: "User",
+    title: "HR Manager",
+    userName: "jdoe@gmail.com",
+    password: "I am cool",
+  },
+  {
+    id: 3,
+    firstName: "Jane",
+    lastName: "Doe",
+    status: "User",
+    title: "HR Manager",
+    userName: "jdoe@gmail.com",
+    password: "I am cool",
+  },
+  {
+    id: 4,
+    firstName: "Jane",
+    lastName: "Doe",
+    status: "Admin",
+    title: "HR Manager",
+    userName: "jdoe@gmail.com",
+    password: "I am cool",
+  },
+];

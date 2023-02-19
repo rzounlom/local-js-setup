@@ -1,0 +1,54 @@
+.counter {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 5px solid rgb(235, 234, 234);
+  transition: 0.3s;
+  border-radius: 12px;
+  &:hover {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.8);
+    cursor: pointer;
+  }
+
+  .counter-value {
+    height: 60%;
+    width: 100%;
+    border-bottom: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15rem;
+    color: white;
+  }
+
+  .counter-actions {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button,
+    .ant-select {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 33.33%;
+    }
+
+    label {
+      color: white;
+      font-size: 1.1rem;
+      margin-top: 5px;
+    }
+  }
+}
