@@ -9,6 +9,7 @@ const initialState = {
   getAllEmployeeLodaing: false,
   updateEmployeeLoading: false,
   deleteEmployeeLoading: false,
+  employeeToEdit: null,
 };
 
 //create instance of EmployeesApi
@@ -27,7 +28,14 @@ export const fetchEmployees = createAsyncThunk(
 export const dashboardSlice = createSlice({
   name: "dashboard",
   initialState,
-  reducers: {},
+  reducers: {
+    setEmployeeToEdit: (state, action) => {
+      state.employeeToEdit = action.payload;
+    },
+    clearEmployeeToEdit: (state, action) => {
+      state.employeeToEdit = null;
+    },
+  },
   extraReducers: (builder) => {
     //create pending(what happens wile the request is still pending) case for getting all employees
     builder.addCase(fetchEmployees.pending, (state) => {
@@ -45,5 +53,7 @@ export const dashboardSlice = createSlice({
 });
 
 export const dashboardReducer = dashboardSlice.reducer;
+export const { setEmployeeToEdit, clearEmployeeToEdit } =
+  dashboardSlice.actions;
 
 export default dashboardSlice;

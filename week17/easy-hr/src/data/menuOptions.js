@@ -1,6 +1,7 @@
 import {
+  HomeOutlined,
+  UserAddOutlined,
   UserOutlined,
-  UsergroupAddOutlined,
   UsergroupDeleteOutlined,
 } from "@ant-design/icons";
 
@@ -11,7 +12,7 @@ export const adminOptions = [
     key: "1",
     icon: (
       <Link to="/dashboard">
-        <UserOutlined />
+        <HomeOutlined />
       </Link>
     ),
     label: "Home",
@@ -37,12 +38,11 @@ export const adminOptions = [
   {
     key: "4",
     icon: (
-      <Link to="/dashboard/manage-employees">
-        <UsergroupAddOutlined />
+      <Link to="/dashboard/add-employee">
+        <UserAddOutlined />
       </Link>
     ),
-    label: "Manage Employees",
-    url: "/manage-users",
+    label: "Add New Employee",
   },
 ];
 
@@ -50,11 +50,19 @@ export const userOptions = [
   {
     key: "1",
     icon: (
+      <Link to="/dashboard">
+        <HomeOutlined />
+      </Link>
+    ),
+    label: "Home",
+  },
+  {
+    key: "2",
+    icon: (
       <Link to="/dashboard/profle">
         <UserOutlined />
       </Link>
     ),
     label: "Profile",
-    url: "/profile",
   },
 ];

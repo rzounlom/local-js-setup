@@ -2,15 +2,15 @@ import "./Dashboard.scss";
 
 import { Layout, Menu, theme } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import React, { useState } from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
 import { adminOptions, userOptions } from "../../data/menuOptions";
+import { createElement, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import AddUsers from "./AddUsers";
+import AddEmployee from "./AddEmployee";
+import EditEmployee from "./EditEmployee";
 import Employees from "./Employees";
 import Profile from "./Profile";
-// import { employees } from "../../data/employees";
 import { fetchEmployees } from "./dashboardSlice";
 import { useEffect } from "react";
 
@@ -19,6 +19,7 @@ const Dashboard = () => {
   //declare dispatch function for actions
   const dispatch = useDispatch();
   const { url } = useRouteMatch();
+  const history = useHistory();
 
   const { profile } = useSelector((state) => state.auth.currentUser);
   const { employees } = useSelector((state) => state.dashboard);
@@ -31,7 +32,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(fetchEmployees());
-  }, [dispatch]);
+    history.push("/dashboard");
+  }, [dispatch, history]);
 
   return (
     <Layout>
@@ -42,8 +44,7 @@ const Dashboard = () => {
           mode="inline"
           defaultSelectedKeys={["1"]}
           items={profile.status === "ADMIN" ? adminOptions : userOptions}
-          onClick={({ key, keyPath, domEvent }) => {
-            console.log({ key, keyPath, domEvent });
+          onClick={({ key }) => {
             if (key === "3") {
               dispatch(fetchEmployees());
             }
@@ -57,13 +58,10 @@ const Dashboard = () => {
             background: colorBgContainer,
           }}
         >
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: () => setCollapsed(!collapsed),
-            }
-          )}
+          {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            className: "trigger",
+            onClick: () => setCollapsed(!collapsed),
+          })}
         </Header>
         <Content
           style={{
@@ -86,8 +84,13 @@ const Dashboard = () => {
               render={() => <Employees employees={employees} />}
             />
             <Route
-              path={`${url}/manage-employees`}
-              render={() => <AddUsers />}
+              exact
+              path={`${url}/add-employee`}
+              render={() => <AddEmployee />}
+            />
+            <Route
+              path={`${url}/employee/:employeeId`}
+              render={() => <EditEmployee />}
             />
           </Switch>
         </Content>

@@ -17,7 +17,7 @@ export default function Emplyees({ employees }) {
     return (
       <Row gutter={[16, 16]}>
         {employees.map((employee) => (
-          <Col sm={24} md={12} lg={8} key={employee.id}>
+          <Col sm={24} md={12} lg={8} xl={6} key={employee.id}>
             <Employee employee={employee} />
           </Col>
         ))}

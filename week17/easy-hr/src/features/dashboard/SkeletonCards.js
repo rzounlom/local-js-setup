@@ -6,7 +6,7 @@ export default function SkeletonCards() {
   return (
     <>
       {" "}
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -17,7 +17,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -28,7 +28,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -39,7 +39,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -50,7 +50,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -61,7 +61,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -72,7 +72,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -83,7 +83,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -94,7 +94,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -105,7 +105,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -116,7 +116,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
@@ -127,7 +127,7 @@ export default function SkeletonCards() {
           </Skeleton>
         </Card>
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={12} lg={8} xl={6}>
         <Card style={{ width: 240, marginTop: 10 }}>
           <Skeleton loading={true} avatar active>
             <Meta
