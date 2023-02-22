@@ -5,26 +5,34 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { adminOptions, userOptions } from "../../data/menuOptions";
+import { useDispatch, useSelector } from "react-redux";
 
 import AddUsers from "./AddUsers";
 import Employees from "./Employees";
 import Profile from "./Profile";
-import { useGetAllEmployeesQuery } from "../../services/employees";
-import { useSelector } from "react-redux";
+// import { employees } from "../../data/employees";
+import { fetchEmployees } from "./dashboardSlice";
+import { useEffect } from "react";
 
 const { Header, Sider, Content } = Layout;
-const App = () => {
+const Dashboard = () => {
+  //declare dispatch function for actions
+  const dispatch = useDispatch();
   const { url } = useRouteMatch();
 
   const { profile } = useSelector((state) => state.auth.currentUser);
-  const [collapsed, setCollapsed] = useState(false);
+  const { employees } = useSelector((state) => state.dashboard);
 
-  //get data, error, and isLoading states from the getAllemployees query
-  const { data } = useGetAllEmployeesQuery();
+  const [collapsed, setCollapsed] = useState(false);
 
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  useEffect(() => {
+    dispatch(fetchEmployees());
+  }, [dispatch]);
+
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -36,6 +44,9 @@ const App = () => {
           items={profile.status === "ADMIN" ? adminOptions : userOptions}
           onClick={({ key, keyPath, domEvent }) => {
             console.log({ key, keyPath, domEvent });
+            if (key === "3") {
+              dispatch(fetchEmployees());
+            }
           }}
         />
       </Sider>
@@ -71,14 +82,17 @@ const App = () => {
             />
             <Route path={`${url}/profile`} render={() => <Profile />} />
             <Route
-              path={`${url}/users`}
-              render={() => <Employees employees={data} />}
+              path={`${url}/employees`}
+              render={() => <Employees employees={employees} />}
             />
-            <Route path={`${url}/manage-users`} render={() => <AddUsers />} />
+            <Route
+              path={`${url}/manage-employees`}
+              render={() => <AddUsers />}
+            />
           </Switch>
         </Content>
       </Layout>
     </Layout>
   );
 };
-export default App;
+export default Dashboard;

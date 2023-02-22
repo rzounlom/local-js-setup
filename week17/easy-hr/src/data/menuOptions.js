@@ -28,20 +28,20 @@ export const adminOptions = [
   {
     key: "3",
     icon: (
-      <Link to="/dashboard/users">
+      <Link to="/dashboard/employees">
         <UsergroupDeleteOutlined />
       </Link>
     ),
-    label: "Users",
+    label: "Employees",
   },
   {
     key: "4",
     icon: (
-      <Link to="/dashboard/manage-users">
+      <Link to="/dashboard/manage-employees">
         <UsergroupAddOutlined />
       </Link>
     ),
-    label: "Manage Users",
+    label: "Manage Employees",
     url: "/manage-users",
   },
 ];

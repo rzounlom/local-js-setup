@@ -1,15 +1,14 @@
-import authReducer from "../features/auth/authSlice";
+import { authReducer } from "../features/auth/authSlice";
 import { configureStore } from "@reduxjs/toolkit";
-import { employeesApi } from "../services/employees";
+import { dashboardReducer } from "../features/dashboard/dashboardSlice";
 import { setupListeners } from "@reduxjs/toolkit/query/react";
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    [employeesApi.reducerPath]: employeesApi.reducer,
+    dashboard: dashboardReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(employeesApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
 
 setupListeners(store.dispatch);

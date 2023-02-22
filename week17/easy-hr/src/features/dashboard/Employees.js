@@ -1,15 +1,23 @@
 import { Col, Row } from "antd";
 
 import Employee from "./Employee";
+import SkeletonCards from "./SkeletonCards";
+import { useSelector } from "react-redux";
 
 export default function Emplyees({ employees }) {
-  console.log({ employees });
+  const { getAllEmployeeLodaing } = useSelector((state) => state.dashboard);
 
-  if (employees) {
+  if (getAllEmployeeLodaing) {
+    return (
+      <Row>
+        <SkeletonCards />
+      </Row>
+    );
+  } else if (employees) {
     return (
       <Row gutter={[16, 16]}>
         {employees.map((employee) => (
-          <Col span={8} key={employee.id}>
+          <Col sm={24} md={12} lg={8} key={employee.id}>
             <Employee employee={employee} />
           </Col>
         ))}
