@@ -3,10 +3,13 @@ import "./Home.scss";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
+import { logout } from "../auth/authSlice";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const { isLoggedIn } = useSelector((state) => state.auth.currentUser);
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((state) => state.auth.currentEmployee);
 
   return (
     <div className="home">
@@ -19,14 +22,22 @@ const Home = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
+
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
             {!isLoggedIn ? (
               <li>
                 <Link to="/login">Login</Link>
               </li>
             ) : null}
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
+            {isLoggedIn ? (
+              <li>
+                <Link to="/" onClick={() => dispatch(logout())}>
+                  Logout
+                </Link>
+              </li>
+            ) : null}
           </ul>
         </nav>
       </header>

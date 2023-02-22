@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 
 const { Header, Sider, Content } = Layout;
 const App = () => {
-  const { profile } = useSelector((state) => state.auth.currentUser);
+  const { profile } = useSelector((state) => state.auth.currentEmployee);
   const [collapsed, setCollapsed] = useState(false);
   const [content, setContent] = useState("1");
 

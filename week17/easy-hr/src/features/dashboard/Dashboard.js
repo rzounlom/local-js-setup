@@ -21,7 +21,7 @@ const Dashboard = () => {
   const { url } = useRouteMatch();
   const history = useHistory();
 
-  const { profile } = useSelector((state) => state.auth.currentUser);
+  const { profile } = useSelector((state) => state.auth.currentEmployee);
   const { employees } = useSelector((state) => state.dashboard);
 
   const [collapsed, setCollapsed] = useState(false);

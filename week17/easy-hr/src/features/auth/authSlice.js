@@ -1,16 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+const currentUser = localStorage.getItem("currentUser");
+
 const initialState = {
-  currentUser: {
-    profile: {
-      id: 1,
-      firstName: "Jane",
-      lastName: "Doe",
-      status: "ADMIN",
-      title: "HR Manager",
-      userName: "jdoe@gmail.com",
-      password: "I am cool",
-    },
-    isLoggedIn: true,
+  currentEmployee: {
+    profile: currentUser ? JSON.parse(currentUser) : {},
+    isLoggedIn: currentUser ? true : false,
   },
 };
 
@@ -18,18 +12,20 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    loginUser: (state, action) => {
-      state.currentUser.profile = action.payload;
-      state.currentUser.isLoggedIn = true;
+    login: (state, action) => {
+      localStorage.setItem("currentUser", JSON.stringify(action.payload));
+      state.currentEmployee.profile = action.payload;
+      state.currentEmployee.isLoggedIn = true;
     },
-    logoutUser: (state) => {
-      state.currentUser = null;
-      state.currentUser.profile = null;
+    logout: (state) => {
+      localStorage.removeItem("currentUser");
+      state.currentEmployee.profile = {};
+      state.currentEmployee.isLoggedIn = false;
     },
   },
 });
 
-export const { loginUser, logoutUser } = authSlice.actions;
+export const { login, logout } = authSlice.actions;
 export const authReducer = authSlice.reducer;
 
 export default authSlice;

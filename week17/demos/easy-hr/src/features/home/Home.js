@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const { isLoggedIn } = useSelector((state) => state.auth.currentUser);
+  const { isLoggedIn } = useSelector((state) => state.auth.currentEmployee);
 
   return (
     <div className="home">

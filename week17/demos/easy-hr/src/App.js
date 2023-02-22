@@ -13,7 +13,7 @@ import Login from "./features/auth/login/Login";
 import { useSelector } from "react-redux";
 
 function App() {
-  const { isLoggedIn } = useSelector((state) => state.auth.currentUser);
+  const { isLoggedIn } = useSelector((state) => state.auth.currentEmployee);
 
   return (
     <Router>
