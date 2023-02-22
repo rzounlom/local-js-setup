@@ -3,31 +3,24 @@ import "./Dashboard.scss";
 import { Layout, Menu, theme } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
+import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { adminOptions, userOptions } from "../../data/menuOptions";
 
 import AddUsers from "./AddUsers";
+import Employees from "./Employees";
 import Profile from "./Profile";
-import Users from "./Users";
+import { useGetAllEmployeesQuery } from "../../services/employees";
 import { useSelector } from "react-redux";
 
 const { Header, Sider, Content } = Layout;
 const App = () => {
+  const { url } = useRouteMatch();
+
   const { profile } = useSelector((state) => state.auth.currentUser);
   const [collapsed, setCollapsed] = useState(false);
-  const [content, setContent] = useState("1");
 
-  const renderContent = (key) => {
-    switch (key) {
-      case "1":
-        return <Profile />;
-      case "2":
-        return <Users />;
-      case "3":
-        return <AddUsers />;
-      default:
-        return null;
-    }
-  };
+  //get data, error, and isLoading states from the getAllemployees query
+  const { data } = useGetAllEmployeesQuery();
 
   const {
     token: { colorBgContainer },
@@ -43,7 +36,6 @@ const App = () => {
           items={profile.status === "ADMIN" ? adminOptions : userOptions}
           onClick={({ key, keyPath, domEvent }) => {
             console.log({ key, keyPath, domEvent });
-            setContent(key);
           }}
         />
       </Sider>
@@ -66,12 +58,24 @@ const App = () => {
           style={{
             margin: "24px 16px",
             padding: 24,
-            height: "88.5vh",
+            height: "85.8vh",
             background: colorBgContainer,
             overflowY: "auto",
           }}
         >
-          {renderContent(content)}
+          <Switch>
+            <Route
+              exact
+              path={`${url}`}
+              render={() => <div>Welcome to your Dashboard</div>}
+            />
+            <Route path={`${url}/profile`} render={() => <Profile />} />
+            <Route
+              path={`${url}/users`}
+              render={() => <Employees employees={data} />}
+            />
+            <Route path={`${url}/manage-users`} render={() => <AddUsers />} />
+          </Switch>
         </Content>
       </Layout>
     </Layout>
