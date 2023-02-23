@@ -30,7 +30,7 @@ export default function Employee({ employee }) {
       >
         <Meta
           title={`${employee.firstName} ${employee.lastName}`}
-          description="www.instagram.com"
+          description={`${employee.title}`}
         />
       </Card>
     </Link>

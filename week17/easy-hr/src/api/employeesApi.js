@@ -3,7 +3,7 @@ import axios from "axios";
 //create an api for handling Employee related requests
 export class EmployeesApi {
   constructor() {
-    this.baseUrl = `https://63f2b02af28929a9df5e0de2.mockapi.io/api/`;
+    this.baseUrl = `https://63f2b02af28929a9df5e0de2.mockapi.io/api`;
   }
 
   //retrieve all employees
@@ -42,15 +42,17 @@ export class EmployeesApi {
   };
 
   //edit an emplyee by their id
-  updateEmployee = async (id, employee) => {
+  updateEmployee = async (id, employeeData) => {
     try {
-      const { data } = await axios.patch(`${this.baseUrl}/employees/${id}`, {
-        ...employee,
-      });
+      const { data } = await axios.put(
+        `${this.baseUrl}/employees/${id}`,
+        employeeData
+      );
+
       return data;
     } catch (error) {
       console.log(error);
-      return {};
+      return null;
     }
   };
 

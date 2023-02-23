@@ -36,7 +36,8 @@ const Login = () => {
       const employees = await api.getAllEmplyees();
 
       const foundEmployee = employees.find(
-        (employee) => employee.userName === username
+        (employee) =>
+          employee.userName === username && employee.password === password
       );
 
       if (!foundEmployee) {
@@ -52,9 +53,7 @@ const Login = () => {
           theme: "light",
         });
         return;
-      }
-
-      if (foundEmployee.password === password) {
+      } else {
         setLoginLoading(false);
         dispatch(login(foundEmployee));
         setLoginData({
@@ -62,16 +61,7 @@ const Login = () => {
           password: "",
         });
         history.push("/dashboard");
-        return;
       }
-
-      setLoginLoading(false);
-      setLoginData({
-        username: "",
-        password: "",
-      });
-
-      return;
     } catch (error) {
       console.log(error);
       toast.error("Soemthing went wrong! Please try again", {
@@ -84,6 +74,7 @@ const Login = () => {
         progress: undefined,
         theme: "light",
       });
+
       setLoginData({
         username: "",
         password: "",

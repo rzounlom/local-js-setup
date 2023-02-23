@@ -16,7 +16,7 @@ const initialState = {
 const api = new EmployeesApi();
 
 //create async thunk functions for api employee requests
-//get all users
+//get all employees
 export const fetchEmployees = createAsyncThunk(
   "dashboard/getEmployees",
   async () => {

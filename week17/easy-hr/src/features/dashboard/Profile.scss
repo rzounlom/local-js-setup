@@ -1,0 +1,14 @@
+.profile {
+  .edit-action {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: darkgray;
+
+    button {
+      margin-left: 5px;
+    }
+  }
+}

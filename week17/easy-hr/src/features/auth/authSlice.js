@@ -22,10 +22,13 @@ export const authSlice = createSlice({
       state.currentEmployee.profile = {};
       state.currentEmployee.isLoggedIn = false;
     },
+    updateProfile: (state, action) => {
+      state.currentEmployee.profile = action.payload;
+    },
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, updateProfile } = authSlice.actions;
 export const authReducer = authSlice.reducer;
 
 export default authSlice;

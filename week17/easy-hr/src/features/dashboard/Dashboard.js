@@ -12,6 +12,7 @@ import EditEmployee from "./EditEmployee";
 import Employees from "./Employees";
 import Profile from "./Profile";
 import { fetchEmployees } from "./dashboardSlice";
+import { logout } from "../auth/authSlice";
 import { useEffect } from "react";
 
 const { Header, Sider, Content } = Layout;
@@ -47,6 +48,10 @@ const Dashboard = () => {
           onClick={({ key }) => {
             if (key === "3") {
               dispatch(fetchEmployees());
+            }
+
+            if (key === "5") {
+              dispatch(logout());
             }
           }}
         />

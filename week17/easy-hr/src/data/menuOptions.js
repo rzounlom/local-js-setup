@@ -1,5 +1,6 @@
 import {
   HomeOutlined,
+  LogoutOutlined,
   UserAddOutlined,
   UserOutlined,
   UsergroupDeleteOutlined,
@@ -20,7 +21,7 @@ export const adminOptions = [
   {
     key: "2",
     icon: (
-      <Link to="/dashboard/profle">
+      <Link to="/dashboard/profile">
         <UserOutlined />
       </Link>
     ),
@@ -44,6 +45,15 @@ export const adminOptions = [
     ),
     label: "Add New Employee",
   },
+  {
+    key: "5",
+    icon: (
+      <Link to="/">
+        <LogoutOutlined />
+      </Link>
+    ),
+    label: "Logout",
+  },
 ];
 
 export const userOptions = [
@@ -59,10 +69,19 @@ export const userOptions = [
   {
     key: "2",
     icon: (
-      <Link to="/dashboard/profle">
+      <Link to="/dashboard/profile">
         <UserOutlined />
       </Link>
     ),
     label: "Profile",
+  },
+  {
+    key: "5",
+    icon: (
+      <Link to="/">
+        <LogoutOutlined />
+      </Link>
+    ),
+    label: "Logout",
   },
 ];
