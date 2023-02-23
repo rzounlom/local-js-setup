@@ -37,7 +37,7 @@ const Dashboard = () => {
   }, [dispatch, history]);
 
   return (
-    <Layout>
+    <Layout className="dashboard">
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo" />
         <Menu
@@ -72,7 +72,7 @@ const Dashboard = () => {
           style={{
             margin: "24px 16px",
             padding: 24,
-            height: "85.8vh",
+            height: "89vh",
             background: colorBgContainer,
             overflowY: "auto",
           }}
@@ -81,7 +81,12 @@ const Dashboard = () => {
             <Route
               exact
               path={`${url}`}
-              render={() => <div>Welcome to your Dashboard</div>}
+              render={() => (
+                <h2>
+                  Welcome to your Dashboard:
+                  {`${profile.firstName} ${profile.lastName}`}
+                </h2>
+              )}
             />
             <Route path={`${url}/profile`} render={() => <Profile />} />
             <Route

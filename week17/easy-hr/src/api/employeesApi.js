@@ -63,7 +63,7 @@ export class EmployeesApi {
       return data;
     } catch (error) {
       console.log(error);
-      return {};
+      return null;
     }
   };
 }

@@ -1,13 +1,18 @@
-import { Button, Descriptions } from "antd";
+import {
+  ArrowRightOutlined,
+  ExclamationCircleOutlined,
+} from "@ant-design/icons";
+import { Button, Descriptions, Modal } from "antd";
 
-import { ArrowRightOutlined } from "@ant-design/icons";
 import { EmployeesApi } from "../../api/employeesApi";
+import { fetchEmployees } from "./dashboardSlice";
 import { toast } from "react-toastify";
 import { updateProfile } from "../auth/authSlice";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
-export default function EditProfile({ profile }) {
+export default function EditProfile({ editEmployee, profile }) {
   const inputStyle = {
     borderRadius: "12px",
     border: "1px solid lightgrey",
@@ -17,7 +22,11 @@ export default function EditProfile({ profile }) {
     maxWidth: "200px",
   };
 
+  const history = useHistory();
   const [updateLoading, setUpdateLoading] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   const api = new EmployeesApi();
   const dispatch = useDispatch();
 
@@ -68,9 +77,8 @@ export default function EditProfile({ profile }) {
     setUpdateLoading(true);
     try {
       const updatedEmployee = await api.updateEmployee(profile.id, profileData);
-      console.log({ updatedEmployee });
-      if (updatedEmployee && typeof updatedEmployee === "object") {
-        dispatch(updateProfile(updatedEmployee));
+      // console.log({ updatedEmployee });
+      if (updatedEmployee) {
         setUpdateLoading(false);
         toast.success("Profile updated!", {
           position: "top-right",
@@ -82,6 +90,13 @@ export default function EditProfile({ profile }) {
           progress: undefined,
           theme: "light",
         });
+
+        if (editEmployee) {
+          dispatch(fetchEmployees());
+          history.push("/dashboard/employees");
+          return;
+        }
+        dispatch(updateProfile(updatedEmployee));
       } else {
         toast.error("Soemthing went wrong! Please try again", {
           position: "top-right",
@@ -111,8 +126,70 @@ export default function EditProfile({ profile }) {
     }
   };
 
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    setDeleteLoading(true);
+
+    try {
+      const deletedEmplyee = await api.deleteEmployee(profile.id);
+
+      if (deletedEmplyee) {
+        setDeleteLoading(false);
+        setShowModal(false);
+        dispatch(fetchEmployees());
+        history.push("/dashboard/employees");
+        toast.success("Employee deleted!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else {
+        toast.error("Soemthing went wrong! Please try again", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      setDeleteLoading(false);
+      toast.error("Soemthing went wrong! Please try again", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
   return (
     <div className="edit-profile">
+      <Modal
+        title="Delete Employee"
+        open={showModal}
+        onOk={handleDelete}
+        okType="danger"
+        okText="Delete"
+        cancelText="Cancel"
+        confirmLoading={deleteLoading}
+        onCancel={() => setShowModal(false)}
+      >
+        <p>Are you sure you want to delete this employee</p>
+      </Modal>
       <Descriptions title="User Info" layout="vertical">
         <Descriptions.Item label="FirstName">
           <input
@@ -213,12 +290,27 @@ export default function EditProfile({ profile }) {
         style={{ background: "aqua" }}
         shape="round"
         icon={<ArrowRightOutlined />}
-        size="small"
+        size="middle"
         disabled={validateInputs}
         onClick={handleSubmit}
       >
         Submit
       </Button>
+      {editEmployee && (
+        <Button
+          style={{ marginLeft: "8px" }}
+          danger
+          loading={updateLoading}
+          type="primary"
+          shape="round"
+          icon={<ExclamationCircleOutlined />}
+          size="middle"
+          disabled={validateInputs}
+          onClick={() => setShowModal(true)}
+        >
+          Delete
+        </Button>
+      )}
     </div>
   );
 }
